@@ -3,14 +3,14 @@
 #include <stdio.h>
 
 /* creates a matrix and initializes it with all 0.0 */
-matrix_t createMatrix(int rows, int cols){
+matrix_t createMatrix(int rows, int cols, float initialValue){
     matrix_t mat;
     mat.rows = rows;
     mat.cols = cols;
-    mat.values = (double*) malloc(sizeof(double) * rows * cols);
+    mat.values = (float*) malloc(sizeof(float) * rows * cols);
     int i;
     for(i=0; i<rows*cols; i++){
-        mat.values[i] = 0.0;
+        mat.values[i] = initialValue;
     }
     return mat;
 }
@@ -35,7 +35,7 @@ void printMatrix(matrix_t *mat){
     for(i=0; i<mat->rows; i++){
         printf("[");
         for(j=0; j<mat->cols; j++){
-            printf("%.3lf ", get(mat, i, j) );
+            printf("%.3f ", get(mat, i, j) );
         }
     printf("]");
         printf("\n");
@@ -44,7 +44,7 @@ void printMatrix(matrix_t *mat){
 }
 
 /* assigns value to matrix mat at position (row, col) */
-void set(matrix_t *mat, int row, int col, double value){
+void set(matrix_t *mat, int row, int col, float value){
     mat->values[row*mat->cols + col] = value;
 }
 
@@ -54,11 +54,17 @@ double get(matrix_t *mat, int row, int col){
 }
 
 
-/* multiply matA * matB. Stores output into matA */
+/* multiply matA * matB. returns new matrix */
 matrix_t matrixMult(matrix_t *matA, matrix_t *matB){
+    if(matA->cols != matB->rows){
+        printf("INVLAID MATRIX DIMENSIONS IN matrixMulti()!!\n");
+        exit(1);
+    }
+    
+    
     int i, j, k;
     //it is important that it is initialized to 0.0
-    matrix_t matrixOut = createMatrix(matA->rows, matB->cols);
+    matrix_t matrixOut = createMatrix(matA->rows, matB->cols, 0);
     
     for(i=0; i<(matrixOut.rows); i++){
         for(j=0; j<(matrixOut.cols); j++){
@@ -74,4 +80,21 @@ matrix_t matrixMult(matrix_t *matA, matrix_t *matB){
     }
     
     return matrixOut;
+}
+
+/* add matA + matB */
+matrix_t matrixAdd(matrix_t* matA, matrix_t* matB){
+    if(matA->rows != matB->rows || matA->cols != matB->cols){
+        printf("INVLAID MATRIX DIMENSIONS IN matrixAdd()!!\n");
+        printf("First matrix is  %d rows by %d cols\n", matA->rows, matA->cols);
+        printf("Second matrix is %d rows by %d cols\n", matB->rows, matB->cols);
+        exit(2);
+    }
+    
+    matrix_t matOut = createMatrix(matA->rows, matA->cols, 0);
+    int i;
+    for(i=0; i<(matA->rows*matA->cols); i++){
+        matOut.values[i] = matA->values[i] + matB->values[i];
+    }
+    return matOut;
 }
