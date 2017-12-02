@@ -1,5 +1,14 @@
 #include <SPI.h>
 
+/* Connections
+ * Encoder1:
+ *   CH_A: 21
+ *   CH_B: 20
+ * Encoder 2:
+ *   CH_A: 19
+ *   CH_B: 18
+  */
+
 const int PIN_CS = 4;
 const unsigned long UPDATE_PERIOD = 10000; //In microseconds
 
@@ -14,19 +23,19 @@ unsigned long long updateTime = 0;
 
 void setup() {
   Serial.begin(115200);
-  Serial1.begin(115200);
+  Serial2.begin(115200);
 
   //Initialize SPI CS pin
   pinMode(PIN_CS, OUTPUT);
   digitalWrite(PIN_CS, HIGH);
 
   //Set encoder pins to input
-  DDRB &= 0x00;
+  DDRD &= 0x00;
 
   //Read initial encoder states
-  uint8_t portb = PORTB;
-  encState1 = portb & 0x03;
-  encState2 = (portb >> 2) & 0x03;
+  uint8_t pind = PIND;
+  encState1 = pind & 0x03;
+  encState2 = (pind >> 2) & 0x03;
 
   //Configure PC interrupts on encoder pins
   attachInterrupt(0, updateEncoders, CHANGE);
@@ -34,7 +43,7 @@ void setup() {
   attachInterrupt(2, updateEncoders, CHANGE);
   attachInterrupt(3, updateEncoders, CHANGE);
 
-  SPI.begin();
+  //SPI.begin();
 
   updateTime = micros() + UPDATE_PERIOD;
 }
@@ -45,18 +54,20 @@ void loop() {
   auto countCopy2 = encCount2;
   interrupts();
 
-  Serial1.write(reinterpret_cast<const char*>(&HEADER_VALUE), sizeof(HEADER_VALUE));
-  Serial1.write(reinterpret_cast<char*>(&countCopy1), sizeof(countCopy1));
-  Serial1.write(reinterpret_cast<char*>(&countCopy2), sizeof(countCopy2));
+  Serial2.write(reinterpret_cast<const char*>(&HEADER_VALUE), sizeof(HEADER_VALUE));
+  Serial2.write(reinterpret_cast<char*>(&countCopy1), sizeof(countCopy1));
+  Serial2.write(reinterpret_cast<char*>(&countCopy2), sizeof(countCopy2));
 
-  if(Serial1.available() >= 3) {
+  if(Serial2.available() >= 3) {
+    Serial.print("Available: ");
+    Serial.println(Serial2.available());
     char ch;
-    while(Serial1.available() >= 3 && (ch = Serial1.read()) != HEADER_VALUE) {
+    while(Serial2.available() >= 3 && (ch = Serial2.read()) != HEADER_VALUE) {
       Serial.print("[Error] Received invalid header value: ");
-      Serial.println(static_cast<int>(ch), HEX);
+      Serial.println(ch, HEX);
     }
 
-    uint16_t dacVal = (Serial1.read() & 0xFF) | (Serial1.read() & 0xFF) << 8;
+    uint16_t dacVal = (Serial2.read() & 0xFF) | (Serial2.read() & 0xFF) << 8;
     updateDAC(dacVal);
 
     Serial.print("DAC Update: ");
@@ -76,6 +87,7 @@ void loop() {
 }
 
 void updateDAC(uint16_t value) {
+  /*
   SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE2));
 
   uint8_t data[3];
@@ -92,6 +104,7 @@ void updateDAC(uint16_t value) {
   digitalWrite(PIN_CS, HIGH);
 
   SPI.endTransaction();
+  */
 }
 
 void updateEncoders() {
@@ -102,10 +115,17 @@ void updateEncoders() {
     {0, -1, 1, 0}
   };
 
-  uint8_t portb = PORTB;
-  uint8_t newEncState1 = portb & 0x03;
-  uint8_t newEncState2 = (portb >> 2) & 0x03;
-
+  uint8_t pind = PIND;
+  uint8_t newEncState1 = pind & 0x03;
+  uint8_t newEncState2 = (pind >> 2) & 0x03;
+/*
+  Serial.print("Encoder State: ");
+  Serial.print(pind, BIN);
+  Serial.print("\t");
+  Serial.print((int)newEncState1);
+  Serial.print("\t");
+  Serial.println((int)newEncState2);
+*/
   encCount1 += STATE_TABLE[encState1][newEncState1];
   encCount2 += STATE_TABLE[encState2][newEncState2];
 
