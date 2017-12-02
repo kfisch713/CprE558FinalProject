@@ -7,6 +7,14 @@
  * Encoder 2:
  *   CH_A: 19
  *   CH_B: 18
+ * DAC:
+ *   MOSI: 51
+ *   MISO: 50
+ *   SCK: 52
+ *   Chip Select (CS): 4
+ * Zybo:
+ *   Arduino TX: 16
+ *   Arduino RX: 17
   */
 
 const int PIN_CS = 4;
@@ -38,12 +46,12 @@ void setup() {
   encState2 = (pind >> 2) & 0x03;
 
   //Configure PC interrupts on encoder pins
-  attachInterrupt(0, updateEncoders, CHANGE);
-  attachInterrupt(1, updateEncoders, CHANGE);
-  attachInterrupt(2, updateEncoders, CHANGE);
-  attachInterrupt(3, updateEncoders, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(18), updateEncoders, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(19), updateEncoders, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(20), updateEncoders, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(21), updateEncoders, CHANGE);
 
-  //SPI.begin();
+  SPI.begin();
 
   updateTime = micros() + UPDATE_PERIOD;
 }
@@ -54,9 +62,7 @@ void loop() {
   auto countCopy2 = encCount2;
   interrupts();
 
-  Serial2.write(reinterpret_cast<const char*>(&HEADER_VALUE), sizeof(HEADER_VALUE));
-  Serial2.write(reinterpret_cast<char*>(&countCopy1), sizeof(countCopy1));
-  Serial2.write(reinterpret_cast<char*>(&countCopy2), sizeof(countCopy2));
+
 
   if(Serial2.available() >= 3) {
     Serial.print("Available: ");
@@ -79,6 +85,10 @@ void loop() {
   if(curTime >= updateTime) {
     updateTime += UPDATE_PERIOD;
 
+    Serial2.write(reinterpret_cast<const char*>(&HEADER_VALUE), sizeof(HEADER_VALUE));
+    Serial2.write(reinterpret_cast<char*>(&countCopy1), sizeof(countCopy1));
+    Serial2.write(reinterpret_cast<char*>(&countCopy2), sizeof(countCopy2));
+
     Serial.print("Encoder Update: ");
     Serial.print(countCopy1);
     Serial.print("\t\t");
@@ -87,7 +97,6 @@ void loop() {
 }
 
 void updateDAC(uint16_t value) {
-  /*
   SPI.beginTransaction(SPISettings(14000000, MSBFIRST, SPI_MODE2));
 
   uint8_t data[3];
@@ -104,7 +113,6 @@ void updateDAC(uint16_t value) {
   digitalWrite(PIN_CS, HIGH);
 
   SPI.endTransaction();
-  */
 }
 
 void updateEncoders() {
@@ -118,14 +126,7 @@ void updateEncoders() {
   uint8_t pind = PIND;
   uint8_t newEncState1 = pind & 0x03;
   uint8_t newEncState2 = (pind >> 2) & 0x03;
-/*
-  Serial.print("Encoder State: ");
-  Serial.print(pind, BIN);
-  Serial.print("\t");
-  Serial.print((int)newEncState1);
-  Serial.print("\t");
-  Serial.println((int)newEncState2);
-*/
+
   encCount1 += STATE_TABLE[encState1][newEncState1];
   encCount2 += STATE_TABLE[encState2][newEncState2];
 
