@@ -8,14 +8,15 @@ void multiplyDemo();
 
 
 void main(void){
-    //sandbox();
-    multiplyDemo();
+    sandbox();
+    //multiplyDemo();
 }
 
 void sandbox(){
-    matrix_t matA = createMatrix(2, 2);
-    matrix_t matA2 = createMatrix(2, 2);
-    matrix_t matB = createMatrix(2, 1);
+    matrix_t matA = createMatrix(2, 2, 0);
+    matrix_t matA2 = createMatrix(2, 2, 0);
+    matrix_t matB = createMatrix(2, 1, 0);
+    matrix_t matC = createMatrix(2, 2, 1);
     
     printf("matA init\n");
     printMatrix(&matA);
@@ -44,13 +45,26 @@ void sandbox(){
     matA2 = matrixMult(&matA, &matB);
     printf("multiply matA * matB\n");
     printMatrix(&matA2);
+    
+    printf("______________________\n");
+    printf("matA\n");
+    printMatrix(&matA);
+    printf("matC\n");
+    printMatrix(&matC);
+    
+    
+    matC = matrixAdd(&matA, &matC);
+    printf("add matA + matC\n");
+    printMatrix(&matC);
+    
+    
 }
 
 void multiplyDemo(){
     //srand(time(NULL));
     srand(0);
-    matrix_t matA = createMatrix(4, 3);
-    matrix_t matB = createMatrix(3, 2);
+    matrix_t matA = createMatrix(4, 3, 0);
+    matrix_t matB = createMatrix(3, 2, 0);
     
     int i, j;
     for(i=0; i<matA.rows*matA.cols; i++){
