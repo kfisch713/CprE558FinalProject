@@ -1,7 +1,5 @@
 library ieee; use ieee.std_logic_1164.all; use ieee.numeric_std.all;
 
-library ieee; use ieee.std_logic_1164.all; use ieee.numeric_std.all;
-
 entity meta_filter is
 	port(	input : in std_logic;
 		output : out std_logic := '0';
