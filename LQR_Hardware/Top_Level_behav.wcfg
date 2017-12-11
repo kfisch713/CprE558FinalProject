@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Top_Level_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Top_Level" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="11911022038300fs"></ZoomStartTime>
+      <ZoomEndTime time="19011022038301fs"></ZoomEndTime>
+      <Cursor1Time time="12120855000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="209"></NameColumnWidth>
+      <ValueColumnWidth column_width="125"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="51" />
+   <wvobject type="logic" fp_name="/Top_Level/Clock">
+      <obj_property name="ElementShortName">Clock</obj_property>
+      <obj_property name="ObjectShortName">Clock</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/CP_Ch_A">
+      <obj_property name="ElementShortName">CP_Ch_A</obj_property>
+      <obj_property name="ObjectShortName">CP_Ch_A</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/CP_Ch_B">
+      <obj_property name="ElementShortName">CP_Ch_B</obj_property>
+      <obj_property name="ObjectShortName">CP_Ch_B</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/PA_Ch_A">
+      <obj_property name="ElementShortName">PA_Ch_A</obj_property>
+      <obj_property name="ObjectShortName">PA_Ch_A</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/PA_CH_B">
+      <obj_property name="ElementShortName">PA_CH_B</obj_property>
+      <obj_property name="ObjectShortName">PA_CH_B</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/SCK">
+      <obj_property name="ElementShortName">SCK</obj_property>
+      <obj_property name="ObjectShortName">SCK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/MOSI">
+      <obj_property name="ElementShortName">MOSI</obj_property>
+      <obj_property name="ObjectShortName">MOSI</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/CS">
+      <obj_property name="ElementShortName">CS</obj_property>
+      <obj_property name="ObjectShortName">CS</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/FSM_State">
+      <obj_property name="ElementShortName">FSM_State[2:0]</obj_property>
+      <obj_property name="ObjectShortName">FSM_State[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/Cart_Neg">
+      <obj_property name="ElementShortName">Cart_Neg</obj_property>
+      <obj_property name="ObjectShortName">Cart_Neg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/dac_active">
+      <obj_property name="ElementShortName">dac_active</obj_property>
+      <obj_property name="ObjectShortName">dac_active</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/fsm_dac_trigger">
+      <obj_property name="ElementShortName">fsm_dac_trigger</obj_property>
+      <obj_property name="ObjectShortName">fsm_dac_trigger</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/dac_done_flag">
+      <obj_property name="ElementShortName">dac_done_flag</obj_property>
+      <obj_property name="ObjectShortName">dac_done_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/FP_Enable_Out">
+      <obj_property name="ElementShortName">FP_Enable_Out</obj_property>
+      <obj_property name="ObjectShortName">FP_Enable_Out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/Encoder_Update">
+      <obj_property name="ElementShortName">Encoder_Update</obj_property>
+      <obj_property name="ObjectShortName">Encoder_Update</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/DAC_Trigger">
+      <obj_property name="ElementShortName">DAC_Trigger</obj_property>
+      <obj_property name="ObjectShortName">DAC_Trigger</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/FP_Enable">
+      <obj_property name="ElementShortName">FP_Enable</obj_property>
+      <obj_property name="ObjectShortName">FP_Enable</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/Reset">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/DAC_Done">
+      <obj_property name="ElementShortName">DAC_Done</obj_property>
+      <obj_property name="ObjectShortName">DAC_Done</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/CP_Count">
+      <obj_property name="ElementShortName">CP_Count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CP_Count[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/CP_Count_Raw">
+      <obj_property name="ElementShortName">CP_Count_Raw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CP_Count_Raw[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/PA_Count">
+      <obj_property name="ElementShortName">PA_Count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PA_Count[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/PA_Count_Raw">
+      <obj_property name="ElementShortName">PA_Count_Raw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PA_Count_Raw[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/V_32int">
+      <obj_property name="ElementShortName">V_32int[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_32int[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/V_16int">
+      <obj_property name="ElementShortName">V_16int[15:0]</obj_property>
+      <obj_property name="ObjectShortName">V_16int[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/DAC_Clamp_Done">
+      <obj_property name="ElementShortName">DAC_Clamp_Done</obj_property>
+      <obj_property name="ObjectShortName">DAC_Clamp_Done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/HW_run_flag">
+      <obj_property name="ElementShortName">HW_run_flag</obj_property>
+      <obj_property name="ObjectShortName">HW_run_flag</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/PA_Count_Bias">
+      <obj_property name="ElementShortName">PA_Count_Bias[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PA_Count_Bias[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/Encoder_Start_Min">
+      <obj_property name="ElementShortName">Encoder_Start_Min[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Encoder_Start_Min[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/Encoder_Start_Max">
+      <obj_property name="ElementShortName">Encoder_Start_Max[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Encoder_Start_Max[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/Encoder_Stop_Min">
+      <obj_property name="ElementShortName">Encoder_Stop_Min[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Encoder_Stop_Min[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/Encoder_Stop_Max">
+      <obj_property name="ElementShortName">Encoder_Stop_Max[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Encoder_Stop_Max[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/aclken">
+      <obj_property name="ElementShortName">aclken</obj_property>
+      <obj_property name="ObjectShortName">aclken</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_a_tvalid">
+      <obj_property name="ElementShortName">s_axis_a_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_a_tready">
+      <obj_property name="ElementShortName">s_axis_a_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_a_tdata">
+      <obj_property name="ElementShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_b_tvalid">
+      <obj_property name="ElementShortName">s_axis_b_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_b_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_b_tready">
+      <obj_property name="ElementShortName">s_axis_b_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_b_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/s_axis_b_tdata">
+      <obj_property name="ElementShortName">s_axis_b_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_b_tdata[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/m_axis_result_tvalid">
+      <obj_property name="ElementShortName">m_axis_result_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/m_axis_result_tready">
+      <obj_property name="ElementShortName">m_axis_result_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/LQR_Control/VoltBFP_to_DAC/m_axis_result_tdata">
+      <obj_property name="ElementShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/aclk">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/aclken">
+      <obj_property name="ElementShortName">aclken</obj_property>
+      <obj_property name="ObjectShortName">aclken</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/s_axis_a_tvalid">
+      <obj_property name="ElementShortName">s_axis_a_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/s_axis_a_tready">
+      <obj_property name="ElementShortName">s_axis_a_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/s_axis_a_tdata">
+      <obj_property name="ElementShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_a_tdata[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/m_axis_result_tvalid">
+      <obj_property name="ElementShortName">m_axis_result_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/m_axis_result_tready">
+      <obj_property name="ElementShortName">m_axis_result_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/Top_Level/LQR_Control/VB_FP_to_int32/m_axis_result_tdata">
+      <obj_property name="ElementShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_result_tdata[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+</wave_config>

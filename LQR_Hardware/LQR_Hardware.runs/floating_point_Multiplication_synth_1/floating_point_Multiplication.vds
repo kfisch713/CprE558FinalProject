@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Fri Dec  8 20:55:23 2017
+# Process ID: 27560
+# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/floating_point_Multiplication_synth_1
+# Command line: vivado -log floating_point_Multiplication.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source floating_point_Multiplication.tcl
+# Log file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/floating_point_Multiplication_synth_1/floating_point_Multiplication.vds
+# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/floating_point_Multiplication_synth_1/vivado.jou
+#-----------------------------------------------------------
+source floating_point_Multiplication.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP floating_point_Multiplication, cache-ID = 3228cf0ef00e9893.

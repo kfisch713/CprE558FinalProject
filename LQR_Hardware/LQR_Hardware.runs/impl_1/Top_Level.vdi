@@ -1,0 +1,503 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Sun Dec 10 19:04:00 2017
+# Process ID: 123667
+# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1
+# Command line: vivado -log Top_Level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Top_Level.tcl -notrace
+# Log file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level.vdi
+# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source Top_Level.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/floating_point_Addition.dcp' for cell 'LQR_Control/A11_Add_A12'
+INFO: [Project 1-454] Reading design checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/floating_point_Multiplication.dcp' for cell 'LQR_Control/CP_FP_to_m'
+INFO: [Project 1-454] Reading design checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/floating_point_Int32_to_Float32.dcp' for cell 'LQR_Control/CP_Int2FP'
+INFO: [Project 1-454] Reading design checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/floating_point_Float32_to_Int32.dcp' for cell 'LQR_Control/VB_FP_to_int32'
+INFO: [Netlist 29-17] Analyzing 691 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+link_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1610.930 ; gain = 404.785 ; free physical = 64509 ; free virtual = 81669
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+Command: report_drc (run_mandatory_drcs) for: opt_checks
+INFO: [DRC 23-27] Running DRC with 8 threads
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.63 . Memory (MB): peak = 1703.961 ; gain = 93.027 ; free physical = 64497 ; free virtual = 81657
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 13 inverter(s) to 221 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 14c14099f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.89 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64121 ; free virtual = 81282
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 113 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 14 inverter(s) to 92 load pin(s).
+Phase 2 Constant propagation | Checksum: 14c4dbe7f
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64113 ; free virtual = 81274
+INFO: [Opt 31-389] Phase Constant propagation created 1305 cells and removed 3530 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 232176d99
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64113 ; free virtual = 81274
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 620 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 232176d99
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64114 ; free virtual = 81275
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 232176d99
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64113 ; free virtual = 81274
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64112 ; free virtual = 81273
+Ending Logic Optimization Task | Checksum: 232176d99
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2166.453 ; gain = 0.000 ; free physical = 64116 ; free virtual = 81276
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 19af8091d
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2166.457 ; gain = 0.004 ; free physical = 64117 ; free virtual = 81277
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 2166.457 ; gain = 555.527 ; free physical = 64116 ; free virtual = 81277
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2196.465 ; gain = 0.000 ; free physical = 64110 ; free virtual = 81272
+INFO: [Common 17-1381] The checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_opt.dcp' has been generated.
+Command: report_drc -file Top_Level_drc_opted.rpt
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
+Command: report_drc (run_mandatory_drcs) for: incr_eco_checks
+INFO: [DRC 23-27] Running DRC with 8 threads
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+Command: report_drc (run_mandatory_drcs) for: placer_checks
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A11_Add_A12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A13_Add_K1/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A21_Add_A22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A33_Add_K3/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M13_Add_M14/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M23_Add_M24/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M33_Add_M34/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 13 Advisories
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2246.492 ; gain = 0.000 ; free physical = 64087 ; free virtual = 81252
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 11b77dd4e
+
+Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2246.492 ; gain = 0.000 ; free physical = 64087 ; free virtual = 81252
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2246.492 ; gain = 0.000 ; free physical = 64077 ; free virtual = 81242
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 165117c36
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 2246.492 ; gain = 0.000 ; free physical = 64064 ; free virtual = 81230
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 21eb2df45
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 2266.832 ; gain = 20.340 ; free physical = 64033 ; free virtual = 81198
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 21eb2df45
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 2266.832 ; gain = 20.340 ; free physical = 64038 ; free virtual = 81204
+Phase 1 Placer Initialization | Checksum: 21eb2df45
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:06 . Memory (MB): peak = 2266.832 ; gain = 20.340 ; free physical = 64036 ; free virtual = 81201
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 1da99f619
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:15 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64011 ; free virtual = 81177
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1da99f619
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:15 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64012 ; free virtual = 81177
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 26e313351
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64009 ; free virtual = 81174
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 29db668f4
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64018 ; free virtual = 81184
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 25818149f
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:18 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64014 ; free virtual = 81179
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 1b5bb2d59
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:19 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64012 ; free virtual = 81177
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1b616119f
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:22 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64010 ; free virtual = 81175
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 191b28e5e
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:22 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64005 ; free virtual = 81171
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 277c385e8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:22 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64005 ; free virtual = 81170
+Phase 3 Detail Placement | Checksum: 277c385e8
+
+Time (s): cpu = 00:00:40 ; elapsed = 00:00:22 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64005 ; free virtual = 81170
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 20ba1d312
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Place 46-38] Processed net FSM/aclken, BUFG insertion was skipped due to placement/routing conflicts.
+INFO: [Place 46-41] BUFG insertion identified 1 candidate nets, 0 success, 1 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 20ba1d312
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64017 ; free virtual = 81183
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.483. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 163d06bc9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64017 ; free virtual = 81183
+Phase 4.1 Post Commit Optimization | Checksum: 163d06bc9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:25 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64011 ; free virtual = 81177
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 163d06bc9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:26 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64015 ; free virtual = 81180
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 163d06bc9
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:26 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64017 ; free virtual = 81183
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 1048c0772
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:26 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64013 ; free virtual = 81178
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1048c0772
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:26 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64013 ; free virtual = 81179
+Ending Placer Task | Checksum: ce830c27
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:26 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64022 ; free virtual = 81187
+58 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:27 . Memory (MB): peak = 2357.453 ; gain = 110.961 ; free physical = 64022 ; free virtual = 81187
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.83 . Memory (MB): peak = 2357.453 ; gain = 0.000 ; free physical = 63996 ; free virtual = 81181
+INFO: [Common 17-1381] The checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_placed.dcp' has been generated.
+report_io: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2357.453 ; gain = 0.000 ; free physical = 64002 ; free virtual = 81175
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2357.453 ; gain = 0.000 ; free physical = 64016 ; free virtual = 81189
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2357.453 ; gain = 0.000 ; free physical = 64013 ; free virtual = 81185
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
+Running DRC as a precondition to command route_design
+Command: report_drc (run_mandatory_drcs) for: router_checks
+INFO: [DRC 23-27] Running DRC with 8 threads
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: bda1f3ad ConstDB: 0 ShapeSum: 10e1187a RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 166aa5207
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63936 ; free virtual = 81109
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 166aa5207
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63934 ; free virtual = 81106
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 166aa5207
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63909 ; free virtual = 81081
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 166aa5207
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63908 ; free virtual = 81080
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1231c5d55
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63889 ; free virtual = 81062
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.361  | TNS=0.000  | WHS=-0.191 | THS=-261.320|
+
+Phase 2 Router Initialization | Checksum: 1b1aa6d9b
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63884 ; free virtual = 81056
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 174bf0484
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:13 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63887 ; free virtual = 81059
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 902
+ Number of Nodes with overlaps = 74
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.409  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 10b149fbd
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:15 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63889 ; free virtual = 81062
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.409  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 149548930
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:16 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63888 ; free virtual = 81061
+Phase 4 Rip-up And Reroute | Checksum: 149548930
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:16 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63885 ; free virtual = 81058
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 149548930
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:16 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63883 ; free virtual = 81055
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 149548930
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:16 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63889 ; free virtual = 81061
+Phase 5 Delay and Skew Optimization | Checksum: 149548930
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:16 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63886 ; free virtual = 81058
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 13d0bf1f2
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:17 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63887 ; free virtual = 81060
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.562  | TNS=0.000  | WHS=0.038  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 14a21d30a
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:17 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63884 ; free virtual = 81057
+Phase 6 Post Hold Fix | Checksum: 14a21d30a
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:17 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63884 ; free virtual = 81057
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 5.53533 %
+  Global Horizontal Routing Utilization  = 7.73392 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 14a21d30a
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:17 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63883 ; free virtual = 81055
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 14a21d30a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:17 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63882 ; free virtual = 81054
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1338a50c6
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:18 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63884 ; free virtual = 81056
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.562  | TNS=0.000  | WHS=0.038  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 1338a50c6
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:18 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63889 ; free virtual = 81061
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:18 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63923 ; free virtual = 81095
+
+Routing Is Done.
+71 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:19 . Memory (MB): peak = 2368.098 ; gain = 10.645 ; free physical = 63917 ; free virtual = 81090
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.92 . Memory (MB): peak = 2390.496 ; gain = 0.000 ; free physical = 63886 ; free virtual = 81084
+INFO: [Common 17-1381] The checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_routed.dcp' has been generated.
+Command: report_drc -file Top_Level_drc_routed.rpt -pb Top_Level_drc_routed.pb -rpx Top_Level_drc_routed.rpx
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_drc_routed.rpt.
+report_drc completed successfully
+Command: report_methodology -file Top_Level_methodology_drc_routed.rpt -rpx Top_Level_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1/Top_Level_methodology_drc_routed.rpt.
+report_methodology completed successfully
+Command: report_power -file Top_Level_power_routed.rpt -pb Top_Level_power_summary_routed.pb -rpx Top_Level_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+78 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+Command: write_bitstream -force Top_Level.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
+Running DRC as a precondition to command write_bitstream
+Command: report_drc (run_mandatory_drcs) for: bitstream_checks
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A11_Add_A12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A13_Add_K1/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A21_Add_A22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/A33_Add_K3/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M13_Add_M14/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M23_Add_M24/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/M33_Add_M34/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC AVAL-4] enum_USE_DPORT_FALSE_enum_DREG_ADREG_0_connects_CED_CEAD_RSTD_GND: LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.NORM_RND/FULL_USAGE_DSP.SHIFT_RND/DSP: DSP48E1 is not using the D port (USE_DPORT = FALSE). For improved power characteristics, set DREG and ADREG to '1', tie CED, CEAD, and RSTD to logic '0'.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A11_Add_A12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A13_Add_K1/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A21_Add_A22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/A33_Add_K3/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M13_Add_M14/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M23_Add_M24/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/M33_Add_M34/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+INFO: [DRC REQP-1725] DSP_Abus_sign_bit_alert: LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP: When using the PreAdder and USE_DPORT is TRUE, the A operand should be restricted to 24 bit two's complement (and sign extended) to avoid over/underflow in the pre-add stage.
+report_drc (run_mandatory_drcs) completed successfully
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 1 Warnings, 26 Advisories
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./Top_Level.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+113 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:21 ; elapsed = 00:00:11 . Memory (MB): peak = 2854.246 ; gain = 262.469 ; free physical = 63740 ; free virtual = 80932
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 10 19:05:55 2017...

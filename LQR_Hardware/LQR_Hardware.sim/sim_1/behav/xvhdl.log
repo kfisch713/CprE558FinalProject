@@ -1,0 +1,24 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/sim/floating_point_Float32_to_Int32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity floating_point_Float32_to_Int32
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/sim/floating_point_Multiplication.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity floating_point_Multiplication
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/sim/floating_point_Addition.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity floating_point_Addition
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/sim/floating_point_Int32_to_Float32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity floating_point_Int32_to_Float32
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity LQR_Controller
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity shift_reg
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity dac
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity dac_clamp
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity lqr_fsm
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/meta_filter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity meta_filter
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity quad_decoder
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Top_Level

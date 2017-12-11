@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Dec  5 19:53:45 2017
+# Process ID: 7372
+# Current directory: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.sim/sim_1/synth/func
+# Command line: wbtcv.exe -mode batch -source C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.sim/sim_1/synth/func/xsim.dir/LQR_Controller_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.sim/sim_1/synth/func/webtalk.log
+# Journal file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.sim/sim_1/synth/func\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.sim/sim_1/synth/func/xsim.dir/LQR_Controller_func_synth/webtalk/xsim_webtalk.tcl -notrace

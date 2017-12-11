@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Dec  5 09:53:46 2017
+# Process ID: 8504
+# Current directory: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Addition_synth_1
+# Command line: vivado.exe -log floating_point_Addition.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source floating_point_Addition.tcl
+# Log file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Addition_synth_1/floating_point_Addition.vds
+# Journal file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Addition_synth_1\vivado.jou
+#-----------------------------------------------------------
+source floating_point_Addition.tcl -notrace

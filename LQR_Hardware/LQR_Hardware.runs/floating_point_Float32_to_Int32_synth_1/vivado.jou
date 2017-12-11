@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Dec  5 12:53:01 2017
+# Process ID: 11908
+# Current directory: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Float32_to_Int32_synth_1
+# Command line: vivado.exe -log floating_point_Float32_to_Int32.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source floating_point_Float32_to_Int32.tcl
+# Log file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Float32_to_Int32_synth_1/floating_point_Float32_to_Int32.vds
+# Journal file: C:/Users/Matthew/Desktop/LQR_Vivado/LQR_Hardware/LQR_Hardware.runs/floating_point_Float32_to_Int32_synth_1\vivado.jou
+#-----------------------------------------------------------
+source floating_point_Float32_to_Int32.tcl -notrace
