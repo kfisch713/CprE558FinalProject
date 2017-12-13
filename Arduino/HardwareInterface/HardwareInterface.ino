@@ -18,7 +18,7 @@
 
 const int PIN_CS = 4;
 
-const unsigned long UPDATE_PERIOD = 1000; //In microseconds
+const unsigned long UPDATE_PERIOD = 10000; //In microseconds
 const unsigned long DEBUG_PERIOD = 100000;
 const unsigned long DAC_TIMEOUT_PERIOD = 100000;
 
