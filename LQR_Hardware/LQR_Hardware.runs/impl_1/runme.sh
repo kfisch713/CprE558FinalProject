@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/impl_1'
+HD_PWD='/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

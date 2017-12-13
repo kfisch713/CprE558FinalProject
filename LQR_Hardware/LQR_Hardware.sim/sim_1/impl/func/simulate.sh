@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xsim Top_Level_func_impl -key {Post-Implementation:sim_1:Functional:Top_Level} -tclbatch Top_Level.tcl -view /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/Top_Level_behav.wcfg -log simulate.log
+ExecStep $xv_path/bin/xsim Top_Level_func_impl -key {Post-Implementation:sim_1:Functional:Top_Level} -tclbatch Top_Level.tcl -view /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/Top_Level_behav.wcfg -log simulate.log

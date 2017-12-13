@@ -42,6 +42,7 @@ entity Top_Level is
            SCK : out STD_LOGIC;
            MOSI : out STD_LOGIC;
            CS : out STD_LOGIC;
+           CS_Mirror : out STD_LOGIC;
            FSM_State : out STD_LOGIC_VECTOR (2 downto 0);
            Cart_Neg : out STD_LOGIC;
            dac_active : out STD_LOGIC;
@@ -69,6 +70,7 @@ COMPONENT LQR_Controller is
            Clk_En       : in STD_LOGIC;
            Update_State : in STD_LOGIC;
            Reset_State  : in STD_LOGIC;
+           U_Ref        : in STD_LOGIC_VECTOR (31 downto 0);
            Volt_Int32   : out STD_LOGIC_VECTOR (31 downto 0)
            );
 end COMPONENT;
@@ -127,6 +129,10 @@ CONSTANT Encoder_Start_Max      : STD_LOGIC_VECTOR(31 downto 0) := x"00000808"; 
 CONSTANT Encoder_Stop_Min       : STD_LOGIC_VECTOR(31 downto 0) := x"0000079C"; --1948
 CONSTANT Encoder_Stop_Max       : STD_LOGIC_VECTOR(31 downto 0) := x"00000864"; --2148
 
+CONSTANT POS_0                  : STD_LOGIC_VECTOR(31 downto 0) := x"3d4ccccd"; -- 0.05m
+CONSTANT POS_1                  : STD_LOGIC_VECTOR(31 downto 0) := x"bd4ccccd"; -- -0.05m
+CONSTANT POS_COUNT              : STD_LOGIC_VECTOR(7 downto 0) := "11001000"; -- 200
+
 ----------------------------------------------------------------------------------
 -- Signal Declarations
 ----------------------------------------------------------------------------------
@@ -145,6 +151,14 @@ SIGNAL DAC_Clamp_Done : STD_LOGIC;
 
 SIGNAL HW_run_flag    : STD_LOGIC := '0';
 SIGNAL PA_Count_Bias  : STD_LOGIC_VECTOR (31 DOWNTO 0);
+
+SIGNAL U_Ref          : STD_LOGIC_VECTOR (31 DOWNTO 0);
+
+SIGNAL Pos_Counter    : STD_LOGIC_VECTOR (7 DOWNTO 0) := "00000000";
+SIGNAL Pos_index      : STD_LOGIC := '0';
+
+SIGNAL Update_hold    : STD_LOGIC := '0';
+SIGNAL s_CS           : STD_LOGIC := '0';
 
 begin
 
@@ -179,8 +193,9 @@ LQR_Control: LQR_Controller PORT MAP(
              Pend_Ang_Int => PA_Count_Bias,
              Mstr_Clk     => Clock,
              Clk_En       => FP_Enable,
-             Update_State => DAC_Trigger,
+             Update_State => Encoder_Update,
              Reset_State  => Reset,
+             U_Ref        => U_Ref,
              Volt_Int32   => V_32int);
 DAC_Cmp: dac_clamp PORT MAP(
          volt_int32  => V_32int,
@@ -196,7 +211,7 @@ Dig2An: dac PORT MAP(
 	    done_flag => DAC_Done,
 		MOSI      => MOSI,
 		SCK       => SCK,
-		CS        => CS,
+		CS        => s_CS,
 		dac_active => dac_active,
 		dac_trigger_out => OPEN
     );
@@ -206,10 +221,26 @@ Dig2An: dac PORT MAP(
    fsm_dac_trigger <= dac_trigger;
    dac_done_flag <= DAC_Done;
    FP_Enable_Out <= FP_Enable;
+   
+   CS <= s_CS;
+   CS_Mirror <= s_CS;
+   
+   U_Ref <= POS_0 when Pos_Index='0' else POS_1;
 
    process(Clock)
    begin
         if rising_edge(Clock) then
+            Update_Hold <= Encoder_Update;
+            
+            if HW_run_flag='1' and Encoder_Update='1' and Update_Hold='0' then
+                Pos_Counter <= std_logic_vector(unsigned(Pos_Counter) + 1);
+            end if;
+            
+            if Pos_Counter=Pos_Count then
+                Pos_Counter <= "00000000";
+                Pos_Index <= not Pos_Index;
+            end if;
+        
             if HW_run_flag='0' then
                 if (signed(PA_Count_Raw) >= signed(Encoder_Start_Min)) and (signed(PA_Count_Raw) <= signed(Encoder_Start_Max)) then
                     HW_run_flag <= '1';
@@ -217,6 +248,7 @@ Dig2An: dac PORT MAP(
             else
                 if (signed(PA_Count_Raw) < signed(Encoder_Stop_Min)) or (signed(PA_Count_Raw) > signed(Encoder_Stop_Max)) then
                     HW_run_flag <= '0';
+                    Pos_Index <= '0';
                 end if;
             end if;
         end if;

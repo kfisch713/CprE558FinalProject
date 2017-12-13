@@ -39,6 +39,7 @@ entity LQR_Controller is
            Clk_En       : in STD_LOGIC;
            Update_State : in STD_LOGIC;
            Reset_State  : in STD_LOGIC;
+           U_Ref        : in STD_LOGIC_VECTOR(31 downto 0);
            Volt_Int32   : out STD_LOGIC_VECTOR (31 downto 0)
            );
 end LQR_Controller;
@@ -162,7 +163,7 @@ SIGNAL VoltInt32   : STD_LOGIC_VECTOR (31 DOWNTO 0);
 SIGNAL Update_State_Hold    : STD_LOGIC := '0';
 SIGNAL Reset_Hold           : STD_LOGIC := '0';
 
-SIGNAL U_ref       : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"00000000"; -- Initialize to zero
+--SIGNAL U_ref       : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"00000000"; -- Initialize to zero
 SIGNAL K1_U_ref    : STD_LOGIC_VECTOR (31 DOWNTO 0);
 SIGNAL K2_U_ref    : STD_LOGIC_VECTOR (31 DOWNTO 0);
 SIGNAL K3_U_ref    : STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -197,7 +198,7 @@ CONSTANT K1      : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"c2720000"; -- -60.5
 CONSTANT K2      : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"bfbdf3b6"; -- -1.4840
 CONSTANT K3      : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"c05a92a3"; -- -3.4152
 
-CONSTANT V_Int32_Bias : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"00008000";
+CONSTANT V_Int32_Bias : STD_LOGIC_VECTOR (31 DOWNTO 0) := x"00008000"; --
 
 begin
 
@@ -214,7 +215,7 @@ CP_Int2FP:    floating_point_Int32_to_Float32 PORT MAP(
               m_axis_result_tvalid => OPEN,
               m_axis_result_tready => '1',
               m_axis_result_tdata  => CP_Float);
--- Convert Pendulum Angle Encoder from 32-bit Signed Int to Single Precition Float
+-- Convert Pendulum Angle Encoder from 32-bit Signed Int to Single Precision Float
 PA_Int2FP:    floating_point_Int32_to_Float32 PORT MAP(
             aclk                 => Mstr_Clk,
             aclken               => Clk_En,

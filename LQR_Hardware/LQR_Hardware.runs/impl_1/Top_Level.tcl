@@ -42,7 +42,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -53,20 +52,20 @@ set rc [catch {
   set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.cache/wt [current_project]
-  set_property parent.project_path /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.xpr [current_project]
-  set_property ip_output_repo /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.cache/ip [current_project]
+  set_property webtalk.parent_dir /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.cache/wt [current_project]
+  set_property parent.project_path /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.xpr [current_project]
+  set_property ip_output_repo /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.dcp
-  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/floating_point_Addition.xci
-  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/floating_point_Addition.xci]
-  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/floating_point_Float32_to_Int32.xci
-  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/floating_point_Float32_to_Int32.xci]
-  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/floating_point_Multiplication.xci
-  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/floating_point_Multiplication.xci]
-  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/floating_point_Int32_to_Float32.xci
-  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/floating_point_Int32_to_Float32.xci]
-  read_xdc /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc
+  add_files -quiet /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.dcp
+  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/floating_point_Addition.xci
+  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Addition/floating_point_Addition.xci]
+  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/floating_point_Float32_to_Int32.xci
+  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Float32_to_Int32/floating_point_Float32_to_Int32.xci]
+  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/floating_point_Multiplication.xci
+  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Multiplication_1/floating_point_Multiplication.xci]
+  read_ip -quiet /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/floating_point_Int32_to_Float32.xci
+  set_property is_locked true [get_files /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/ip/floating_point_Int32_to_Float32_1/floating_point_Int32_to_Float32.xci]
+  read_xdc /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc
   link_design -top Top_Level -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

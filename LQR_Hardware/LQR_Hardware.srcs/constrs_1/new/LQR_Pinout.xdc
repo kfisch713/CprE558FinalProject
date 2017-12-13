@@ -82,7 +82,7 @@ create_clock -period 10.000 -name Clock -waveform {0.000 5.000} [get_ports Clock
 set_property -dict {PACKAGE_PIN T20 IOSTANDARD LVCMOS33} [get_ports {FSM_State[0]}]
 set_property -dict {PACKAGE_PIN U20 IOSTANDARD LVCMOS33} [get_ports {FSM_State[1]}]
 set_property -dict {PACKAGE_PIN V20 IOSTANDARD LVCMOS33} [get_ports {FSM_State[2]}]
-#set_property -dict { PACKAGE_PIN W20   IOSTANDARD LVCMOS33 } [get_ports { shift_reg_state[0] }]; #IO_L16N_T2_34 Sch=JB2_N
+set_property -dict { PACKAGE_PIN W20   IOSTANDARD LVCMOS33 } [get_ports { CS_Mirror }]; #IO_L16N_T2_34 Sch=JB2_N
 set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { FP_Enable_Out }]; #IO_L17P_T2_34 Sch=JB3_P
 #set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { shift_trigger_out }]; #IO_L17N_T2_34 Sch=JB3_N
 #set_property -dict { PACKAGE_PIN W18   IOSTANDARD LVCMOS33 } [get_ports { jb_p[3] }]; #IO_L22P_T3_34 Sch=JB4_P
@@ -155,3 +155,5 @@ set_property SLEW FAST [get_ports CS]
 set_property SLEW FAST [get_ports {FSM_State[0]}]
 #set_property SLEW FAST [get_ports {dac_trigger_out}]
 set_property SLEW FAST [get_ports {FP_Enable_Out}]
+set_property SLEW FAST [get_ports {FSM_State[2]}]
+set_property SLEW FAST [get_ports {CS_Mirror}]

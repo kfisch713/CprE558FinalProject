@@ -2,12 +2,12 @@
 # Vivado v2017.1 (64-bit)
 # SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
 # IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
-# Start of session at: Sun Dec 10 19:03:24 2017
-# Process ID: 115170
-# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1
+# Start of session at: Wed Dec 13 16:28:28 2017
+# Process ID: 128914
+# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1
 # Command line: vivado -log Top_Level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Level.tcl
-# Log file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.vds
-# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/vivado.jou
+# Log file: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.vds
+# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source Top_Level.tcl -notrace
 Command: synth_design -top Top_Level -part xc7z010clg400-1
@@ -15,72 +15,72 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 117870 
+INFO: Helper process launched with PID 128929 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1287.723 ; gain = 66.000 ; free physical = 64728 ; free virtual = 81888
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1287.723 ; gain = 66.000 ; free physical = 5087 ; free virtual = 9931
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Top_Level' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:59]
-INFO: [Synth 8-3491] module 'lqr_fsm' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:5' bound to instance 'FSM' of component 'lqr_fsm' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:151]
-INFO: [Synth 8-638] synthesizing module 'lqr_fsm' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'lqr_fsm' (1#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:16]
-INFO: [Synth 8-3491] module 'quad_decoder' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:3' bound to instance 'Cart_Encoder' of component 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:161]
-INFO: [Synth 8-638] synthesizing module 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:12]
-INFO: [Synth 8-638] synthesizing module 'meta_filter' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/meta_filter.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'meta_filter' (2#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/meta_filter.vhd:9]
-INFO: [Synth 8-256] done synthesizing module 'quad_decoder' (3#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:12]
-INFO: [Synth 8-3491] module 'quad_decoder' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:3' bound to instance 'Pend_Encoder' of component 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:169]
-INFO: [Synth 8-3491] module 'LQR_Controller' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:34' bound to instance 'LQR_Control' of component 'LQR_Controller' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:177]
-INFO: [Synth 8-638] synthesizing module 'LQR_Controller' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:46]
-INFO: [Synth 8-3491] module 'floating_point_Int32_to_Float32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:5' bound to instance 'CP_Int2FP' of component 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:208]
-INFO: [Synth 8-638] synthesizing module 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'floating_point_Int32_to_Float32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:5' bound to instance 'PA_Int2FP' of component 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:218]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'CP_FP_to_m' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:229]
-INFO: [Synth 8-638] synthesizing module 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'PA_FP_to_Rad' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:242]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T11_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:259]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T12_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:273]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T13_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:286]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T14_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:299]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T21_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:312]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T22_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:325]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T21_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:338]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T24_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:351]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T31_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:364]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T32_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:377]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T33_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:390]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T34_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:403]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K1_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:416]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K2_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:429]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K3_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:442]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M11_Add_M12' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:460]
-INFO: [Synth 8-638] synthesizing module 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:22]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M13_Add_M14' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:473]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A11_Add_A12' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:486]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A13_Add_K1' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:499]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M21_Add_M22' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:513]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M23_Add_M24' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:527]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A21_Add_A22' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:540]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A23_Add_K2' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:553]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M31_Add_M32' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:567]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M33_Add_M34' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:580]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A31_Add_A32' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:593]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A33_Add_K3' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:606]
-INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'Volt_FP_to_Bias' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:622]
-INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'VoltBFP_to_DAC' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:635]
-INFO: [Synth 8-3491] module 'floating_point_Float32_to_Int32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Float32_to_Int32_stub.vhdl:5' bound to instance 'VB_FP_to_int32' of component 'floating_point_Float32_to_Int32' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:648]
-INFO: [Synth 8-638] synthesizing module 'floating_point_Float32_to_Int32' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/realtime/floating_point_Float32_to_Int32_stub.vhdl:19]
-INFO: [Synth 8-256] done synthesizing module 'LQR_Controller' (4#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:46]
-INFO: [Synth 8-3491] module 'dac_clamp' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:3' bound to instance 'DAC_Cmp' of component 'dac_clamp' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:185]
-INFO: [Synth 8-638] synthesizing module 'dac_clamp' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:11]
-INFO: [Synth 8-256] done synthesizing module 'dac_clamp' (5#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:11]
-INFO: [Synth 8-3491] module 'dac' declared at '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:3' bound to instance 'Dig2An' of component 'dac' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:192]
-INFO: [Synth 8-638] synthesizing module 'dac' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:18]
-INFO: [Synth 8-638] synthesizing module 'shift_reg' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'shift_reg' (6#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'dac' (7#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'Top_Level' (8#1) [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'Top_Level' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:60]
+INFO: [Synth 8-3491] module 'lqr_fsm' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:5' bound to instance 'FSM' of component 'lqr_fsm' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:165]
+INFO: [Synth 8-638] synthesizing module 'lqr_fsm' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'lqr_fsm' (1#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:16]
+INFO: [Synth 8-3491] module 'quad_decoder' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:3' bound to instance 'Cart_Encoder' of component 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:175]
+INFO: [Synth 8-638] synthesizing module 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'meta_filter' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/meta_filter.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'meta_filter' (2#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/meta_filter.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'quad_decoder' (3#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:12]
+INFO: [Synth 8-3491] module 'quad_decoder' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:3' bound to instance 'Pend_Encoder' of component 'quad_decoder' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:183]
+INFO: [Synth 8-3491] module 'LQR_Controller' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:34' bound to instance 'LQR_Control' of component 'LQR_Controller' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'LQR_Controller' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:47]
+INFO: [Synth 8-3491] module 'floating_point_Int32_to_Float32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:5' bound to instance 'CP_Int2FP' of component 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:209]
+INFO: [Synth 8-638] synthesizing module 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'floating_point_Int32_to_Float32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Int32_to_Float32_stub.vhdl:5' bound to instance 'PA_Int2FP' of component 'floating_point_Int32_to_Float32' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:219]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'CP_FP_to_m' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:230]
+INFO: [Synth 8-638] synthesizing module 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'PA_FP_to_Rad' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:243]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T11_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:260]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T12_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:274]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T13_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:287]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T14_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:300]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T21_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:313]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T22_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:326]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T21_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:339]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T24_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:352]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T31_Mult_x1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:365]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T32_Mult_x2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:378]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T33_Mult_sd1' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:391]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'T34_Mult_sd2' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:404]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K1_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:417]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K2_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:430]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'K3_mult_uRef' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:443]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M11_Add_M12' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:461]
+INFO: [Synth 8-638] synthesizing module 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M13_Add_M14' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:474]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A11_Add_A12' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:487]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A13_Add_K1' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:500]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M21_Add_M22' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:514]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M23_Add_M24' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:528]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A21_Add_A22' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:541]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A23_Add_K2' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:554]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M31_Add_M32' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:568]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'M33_Add_M34' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:581]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A31_Add_A32' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:594]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'A33_Add_K3' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:607]
+INFO: [Synth 8-3491] module 'floating_point_Addition' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Addition_stub.vhdl:5' bound to instance 'Volt_FP_to_Bias' of component 'floating_point_Addition' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:623]
+INFO: [Synth 8-3491] module 'floating_point_Multiplication' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Multiplication_stub.vhdl:5' bound to instance 'VoltBFP_to_DAC' of component 'floating_point_Multiplication' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:636]
+INFO: [Synth 8-3491] module 'floating_point_Float32_to_Int32' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Float32_to_Int32_stub.vhdl:5' bound to instance 'VB_FP_to_int32' of component 'floating_point_Float32_to_Int32' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:649]
+INFO: [Synth 8-638] synthesizing module 'floating_point_Float32_to_Int32' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/realtime/floating_point_Float32_to_Int32_stub.vhdl:19]
+INFO: [Synth 8-256] done synthesizing module 'LQR_Controller' (4#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:47]
+INFO: [Synth 8-3491] module 'dac_clamp' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:3' bound to instance 'DAC_Cmp' of component 'dac_clamp' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:200]
+INFO: [Synth 8-638] synthesizing module 'dac_clamp' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'dac_clamp' (5#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac_clamp.vhd:11]
+INFO: [Synth 8-3491] module 'dac' declared at '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:3' bound to instance 'Dig2An' of component 'dac' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:207]
+INFO: [Synth 8-638] synthesizing module 'dac' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:18]
+INFO: [Synth 8-638] synthesizing module 'shift_reg' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'shift_reg' (6#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'dac' (7#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'Top_Level' (8#1) [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:60]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1330.223 ; gain = 108.500 ; free physical = 64731 ; free virtual = 81891
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1330.223 ; gain = 108.500 ; free physical = 5094 ; free virtual = 9938
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -90,91 +90,91 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1330.223 ; gain = 108.500 ; free physical = 64733 ; free virtual = 81893
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1330.223 ; gain = 108.500 ; free physical = 5095 ; free virtual = 9938
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M11_Add_M12'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M11_Add_M12'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M13_Add_M14'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M13_Add_M14'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A11_Add_A12'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A11_Add_A12'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A13_Add_K1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A13_Add_K1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M21_Add_M22'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M21_Add_M22'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M23_Add_M24'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M23_Add_M24'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A21_Add_A22'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A21_Add_A22'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A23_Add_K2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A23_Add_K2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M31_Add_M32'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M31_Add_M32'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M33_Add_M34'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M33_Add_M34'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A31_Add_A32'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A31_Add_A32'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A33_Add_K3'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A33_Add_K3'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/Volt_FP_to_Bias'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/Volt_FP_to_Bias'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp11/floating_point_Float32_to_Int32_in_context.xdc] for cell 'LQR_Control/VB_FP_to_int32'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp11/floating_point_Float32_to_Int32_in_context.xdc] for cell 'LQR_Control/VB_FP_to_int32'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/CP_FP_to_m'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/CP_FP_to_m'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/PA_FP_to_Rad'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/PA_FP_to_Rad'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T11_Mult_x1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T11_Mult_x1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T12_Mult_x2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T12_Mult_x2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T13_Mult_sd1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T13_Mult_sd1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T14_Mult_sd2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T14_Mult_sd2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_x1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_x1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T22_Mult_x2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T22_Mult_x2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_sd1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_sd1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T24_Mult_sd2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T24_Mult_sd2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T31_Mult_x1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T31_Mult_x1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T32_Mult_x2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T32_Mult_x2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T33_Mult_sd1'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T33_Mult_sd1'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T34_Mult_sd2'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T34_Mult_sd2'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K1_mult_uRef'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K1_mult_uRef'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K2_mult_uRef'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K2_mult_uRef'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K3_mult_uRef'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K3_mult_uRef'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/VoltBFP_to_DAC'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/VoltBFP_to_DAC'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/CP_Int2FP'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/CP_Int2FP'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/PA_Int2FP'
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-115170-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/PA_Int2FP'
-Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
-Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Level_propImpl.xdc].
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M11_Add_M12'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M11_Add_M12'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M13_Add_M14'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M13_Add_M14'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A11_Add_A12'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A11_Add_A12'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A13_Add_K1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A13_Add_K1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M21_Add_M22'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M21_Add_M22'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M23_Add_M24'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M23_Add_M24'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A21_Add_A22'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A21_Add_A22'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A23_Add_K2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A23_Add_K2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M31_Add_M32'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M31_Add_M32'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M33_Add_M34'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/M33_Add_M34'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A31_Add_A32'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A31_Add_A32'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A33_Add_K3'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/A33_Add_K3'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/Volt_FP_to_Bias'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp9/floating_point_Addition_in_context.xdc] for cell 'LQR_Control/Volt_FP_to_Bias'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp11/floating_point_Float32_to_Int32_in_context.xdc] for cell 'LQR_Control/VB_FP_to_int32'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp11/floating_point_Float32_to_Int32_in_context.xdc] for cell 'LQR_Control/VB_FP_to_int32'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/CP_FP_to_m'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/CP_FP_to_m'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/PA_FP_to_Rad'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/PA_FP_to_Rad'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T11_Mult_x1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T11_Mult_x1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T12_Mult_x2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T12_Mult_x2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T13_Mult_sd1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T13_Mult_sd1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T14_Mult_sd2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T14_Mult_sd2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_x1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_x1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T22_Mult_x2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T22_Mult_x2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_sd1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T21_Mult_sd1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T24_Mult_sd2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T24_Mult_sd2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T31_Mult_x1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T31_Mult_x1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T32_Mult_x2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T32_Mult_x2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T33_Mult_sd1'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T33_Mult_sd1'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T34_Mult_sd2'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/T34_Mult_sd2'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K1_mult_uRef'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K1_mult_uRef'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K2_mult_uRef'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K2_mult_uRef'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K3_mult_uRef'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/K3_mult_uRef'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/VoltBFP_to_DAC'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp13/floating_point_Multiplication_in_context.xdc] for cell 'LQR_Control/VoltBFP_to_DAC'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/CP_Int2FP'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/CP_Int2FP'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/PA_Int2FP'
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/.Xil/Vivado-128914-linux-6.ece.iastate.edu/dcp15/floating_point_Int32_to_Float32_in_context.xdc] for cell 'LQR_Control/PA_Int2FP'
+Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
+Finished Parsing XDC File [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Level_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1720.211 ; gain = 0.000 ; free physical = 64394 ; free virtual = 81555
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1719.523 ; gain = 0.000 ; free physical = 4822 ; free virtual = 9666
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'LQR_Control/A11_Add_A12' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'LQR_Control/A13_Add_K1' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'LQR_Control/A21_Add_A22' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -210,14 +210,14 @@ WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context 
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'LQR_Control/VoltBFP_to_DAC' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'LQR_Control/Volt_FP_to_Bias' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64572 ; free virtual = 81733
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4933 ; free virtual = 9777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64573 ; free virtual = 81733
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4932 ; free virtual = 9776
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -257,19 +257,21 @@ Applied set_property DONT_TOUCH = true for LQR_Control/VB_FP_to_int32. (constrai
 Applied set_property DONT_TOUCH = true for LQR_Control/VoltBFP_to_DAC. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for LQR_Control/Volt_FP_to_Bias. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64574 ; free virtual = 81734
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4933 ; free virtual = 9777
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "fp_enable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "dac_trigger" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "encoder_update" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "lqr_reset" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element restart_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:70]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
-WARNING: [Synth 8-6014] Unused sequential element internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
-WARNING: [Synth 8-6014] Unused sequential element clock_divider_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:43]
-WARNING: [Synth 8-6014] Unused sequential element watchdog_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:101]
-WARNING: [Synth 8-6014] Unused sequential element zero_clock_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:79]
+WARNING: [Synth 8-6014] Unused sequential element restart_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:68]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element clock_divider_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element watchdog_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:101]
+WARNING: [Synth 8-6014] Unused sequential element zero_clock_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:79]
+INFO: [Synth 8-5546] ROM "Pos_index" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64559 ; free virtual = 81719
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4926 ; free virtual = 9770
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -283,26 +285,29 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 6     
 	               24 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 26    
+	                1 Bit    Registers := 28    
 +---Muxes : 
 	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 7     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 13    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -314,10 +319,13 @@ Module Top_Level
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	                1 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
 Module lqr_fsm 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -326,7 +334,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input      3 Bit        Muxes := 7     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
 Module meta_filter 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -336,7 +344,7 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
@@ -386,14 +394,15 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'LQR_Control/Update_State_Hold_reg' into 'DAC_Cmp/trigger_out_reg' [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:678]
-WARNING: [Synth 8-6014] Unused sequential element LQR_Control/Update_State_Hold_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/new/LQR_Controller.vhd:678]
-WARNING: [Synth 8-6014] Unused sequential element FSM/restart_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:70]
-WARNING: [Synth 8-6014] Unused sequential element Cart_Encoder/internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
-WARNING: [Synth 8-6014] Unused sequential element Pend_Encoder/internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
-WARNING: [Synth 8-6014] Unused sequential element Dig2An/shift_reg_0/clock_divider_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:43]
-WARNING: [Synth 8-6014] Unused sequential element Dig2An/watchdog_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:101]
-WARNING: [Synth 8-6014] Unused sequential element Dig2An/zero_clock_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:79]
+INFO: [Synth 8-4471] merging register 'Update_hold_reg' into 'LQR_Control/Update_State_Hold_reg' [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:233]
+WARNING: [Synth 8-6014] Unused sequential element Update_hold_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/Top_Level.vhd:233]
+INFO: [Synth 8-5546] ROM "Pos_index" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element FSM/restart_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/lqr_fsm.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element Cart_Encoder/internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element Pend_Encoder/internal_count_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/quad_decoder.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element Dig2An/shift_reg_0/clock_divider_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/shift_reg.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element Dig2An/watchdog_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:101]
+WARNING: [Synth 8-6014] Unused sequential element Dig2An/zero_clock_reg was removed.  [/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/sources_1/imports/Eric_Code/dac.vhd:79]
 INFO: [Synth 8-3886] merging instance 'Dig2An/dac_value_reg[23]' (FDE) to 'Dig2An/dac_value_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Dig2An/dac_value_reg[5]' (FDE) to 'Dig2An/dac_value_reg[0]'
 INFO: [Synth 8-3886] merging instance 'Dig2An/dac_value_reg[4]' (FDE) to 'Dig2An/dac_value_reg[0]'
@@ -435,7 +444,7 @@ WARNING: [Synth 8-3332] Sequential element (Cart_Encoder/count_raw_reg[0]) is un
 WARNING: [Synth 8-3332] Sequential element (Dig2An/dac_value_reg[0]) is unused and will be removed from module Top_Level.
 INFO: [Synth 8-3886] merging instance 'Pend_Encoder/init_reg' (FDE) to 'Cart_Encoder/init_reg'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64548 ; free virtual = 81709
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4916 ; free virtual = 9760
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -447,13 +456,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64425 ; free virtual = 81586
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4744 ; free virtual = 9588
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64420 ; free virtual = 81581
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4741 ; free virtual = 9585
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -465,7 +474,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64415 ; free virtual = 81576
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -489,7 +498,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64422 ; free virtual = 81583
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -502,7 +511,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64422 ; free virtual = 81583
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -514,25 +523,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64417 ; free virtual = 81578
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64417 ; free virtual = 81578
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64417 ; free virtual = 81578
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64417 ; free virtual = 81578
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -587,52 +596,52 @@ Report Cell Usage:
 |33    |floating_point_Multiplication_bbox_8   |     1|
 |34    |floating_point_Multiplication_bbox_9   |     1|
 |35    |BUFG                                   |     2|
-|36    |CARRY4                                 |    55|
-|37    |LUT1                                   |    94|
-|38    |LUT2                                   |   178|
-|39    |LUT3                                   |    70|
-|40    |LUT4                                   |     7|
-|41    |LUT5                                   |    15|
+|36    |CARRY4                                 |    56|
+|37    |LUT1                                   |    99|
+|38    |LUT2                                   |   181|
+|39    |LUT3                                   |    74|
+|40    |LUT4                                   |    16|
+|41    |LUT5                                   |    23|
 |42    |LUT6                                   |    20|
-|43    |FDRE                                   |   363|
+|43    |FDRE                                   |   377|
 |44    |IBUF                                   |     5|
-|45    |OBUF                                   |    11|
+|45    |OBUF                                   |    12|
 +------+---------------------------------------+------+
 
 Report Instance Areas: 
 +------+------------------+---------------+------+
 |      |Instance          |Module         |Cells |
 +------+------------------+---------------+------+
-|1     |top               |               |  2007|
+|1     |top               |               |  2052|
 |2     |  Cart_Encoder    |quad_decoder   |   143|
 |3     |    meta_filter_a |meta_filter_2  |    71|
 |4     |    meta_filter_b |meta_filter_3  |     3|
 |5     |  DAC_Cmp         |dac_clamp      |    37|
-|6     |  Dig2An          |dac            |   179|
-|7     |    shift_reg_0   |shift_reg      |    49|
-|8     |  FSM             |lqr_fsm        |    63|
-|9     |  LQR_Control     |LQR_Controller |  1252|
-|10    |  Pend_Encoder    |quad_decoder_0 |   314|
+|6     |  Dig2An          |dac            |   181|
+|7     |    shift_reg_0   |shift_reg      |    51|
+|8     |  FSM             |lqr_fsm        |    79|
+|9     |  LQR_Control     |LQR_Controller |  1255|
+|10    |  Pend_Encoder    |quad_decoder_0 |   315|
 |11    |    meta_filter_a |meta_filter    |    71|
 |12    |    meta_filter_b |meta_filter_1  |     3|
 +------+------------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64417 ; free virtual = 81578
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4737 ; free virtual = 9581
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 44 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1720.215 ; gain = 108.500 ; free physical = 64477 ; free virtual = 81637
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1720.215 ; gain = 498.492 ; free physical = 64477 ; free virtual = 81638
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1719.527 ; gain = 108.500 ; free physical = 4797 ; free virtual = 9641
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1719.527 ; gain = 497.805 ; free physical = 4798 ; free virtual = 9642
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 60 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 61 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-84 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
+87 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1720.215 ; gain = 515.074 ; free physical = 64446 ; free virtual = 81606
-INFO: [Common 17-1381] The checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1751.227 ; gain = 0.000 ; free physical = 64441 ; free virtual = 81601
-INFO: [Common 17-206] Exiting Vivado at Sun Dec 10 19:04:00 2017...
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1719.527 ; gain = 514.387 ; free physical = 4765 ; free virtual = 9609
+INFO: [Common 17-1381] The checkpoint '/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.runs/synth_1/Top_Level.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1750.539 ; gain = 0.000 ; free physical = 4764 ; free virtual = 9608
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 13 16:29:06 2017...
