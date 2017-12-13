@@ -3,7 +3,9 @@ library ieee; use ieee.std_logic_1164.all; use ieee.numeric_std.all;
 entity quad_decoder is
 	port(	ch_a : in std_logic;
 		ch_b : in std_logic;
-		count : out std_logic_vector(31 downto 0);
+		update_output : in std_logic;
+		count : out std_logic_vector(31 downto 0) := x"00000000";
+		count_raw : out std_logic_vector(31 downto 0) := x"00000000";
 		clk : in std_logic	);
 end entity quad_decoder;
 
@@ -16,7 +18,12 @@ begin
 	meta_filter_a : entity work.meta_filter port map(ch_a, filtered_a, clk);
 	meta_filter_b : entity work.meta_filter port map(ch_b, filtered_b, clk);
 
-	count <= internal_count;
+  process(update_output)
+  begin
+    if rising_edge(update_output) then
+      count <= internal_count;
+    end if;
+  end process;
 
 	process(clk)
 	begin
@@ -39,6 +46,8 @@ begin
 				prev_ch_a <= filtered_a;
 				prev_ch_b <= filtered_b;
 			end if;
+		else
+		  count_raw <= internal_count;
 		end if;
 	end process;
 end architecture behavioral;

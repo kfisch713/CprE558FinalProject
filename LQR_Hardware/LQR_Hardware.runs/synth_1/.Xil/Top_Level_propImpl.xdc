@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc rfile:../../../LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc rfile:../../../LQR_Hardware.srcs/constrs_1/new/LQR_Pinout.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN L16 IOSTANDARD LVCMOS33} [get_ports Clock]
 set_property src_info {type:XDC file:1 line:82 export:INPUT save:INPUT read:READ} [current_design]
@@ -7,6 +7,8 @@ set_property src_info {type:XDC file:1 line:83 export:INPUT save:INPUT read:READ
 set_property -dict {PACKAGE_PIN U20 IOSTANDARD LVCMOS33} [get_ports {FSM_State[1]}]
 set_property src_info {type:XDC file:1 line:84 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN V20 IOSTANDARD LVCMOS33} [get_ports {FSM_State[2]}]
+set_property src_info {type:XDC file:1 line:85 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W20   IOSTANDARD LVCMOS33 } [get_ports { CS_Mirror }]; #IO_L16N_T2_34 Sch=JB2_N
 set_property src_info {type:XDC file:1 line:86 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { FP_Enable_Out }]; #IO_L17P_T2_34 Sch=JB3_P
 set_property src_info {type:XDC file:1 line:93 export:INPUT save:INPUT read:READ} [current_design]

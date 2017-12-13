@@ -16,11 +16,12 @@ end entity lqr_fsm;
 architecture behavioral of lqr_fsm is
 SIGNAL state : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
 SIGNAL next_state : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
-SIGNAL restart_count : STD_LOGIC_VECTOR(16 DOWNTO 0):= "00000000000000000"; 
+SIGNAL restart_count : STD_LOGIC_VECTOR(20 DOWNTO 0):= "000000000000000000000"; 
 
-constant COMPUTE_TIME   : std_logic_vector(16 downto 0) := "00000000001100000"; -- 96
+constant COMPUTE_TIME   : std_logic_vector(20 downto 0) := "000000000010000000000"; -- 1024-- 96
 --constant CONTROL_PERIOD : std_logic_vector(16 downto 0) := "11000011010100000"; -- 100,000
-constant CONTROL_PERIOD : std_logic_vector(16 downto 0) :=   "11110100001001000"; -- 125,000
+--constant CONTROL_PERIOD : std_logic_vector(16 downto 0) := "11110100001001000"; -- 125,000
+constant CONTROL_PERIOD : std_logic_vector(20 downto 0) := "100110001001011010000"; -- 1,250,000
 
 BEGIN
     dac_trigger <= '1' when state="010" else '0';
@@ -59,15 +60,16 @@ BEGIN
 	   encoder_update <= '0';
 	   lqr_reset <= '0';
 	   
-	   IF((State /= next_state) AND (next_state = "001")) then
+	   IF(next_state = "100") then
 	       encoder_update <= '1';
-	       IF(State = "000") THEN
-	           lqr_reset <= '1';
-           END IF;
        END IF;
        
 		IF((State = "000" OR State = "100") AND next_state = "001")THEN
-		      restart_count <= "00000000000000000";
+		      restart_count <= "000000000000000000000";
+		      
+		      IF(State = "000") THEN
+		          lqr_reset <= '1';
+              END IF;
 		ELSE
 		  restart_count <= STD_LOGIC_VECTOR(unsigned(restart_count) +1);
 		END IF;

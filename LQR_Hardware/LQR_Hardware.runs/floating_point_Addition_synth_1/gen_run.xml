@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="floating_point_Addition_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1512489223">
-  <File Type="RDS-UTIL" Name="floating_point_Addition_utilization_synth.rpt"/>
-  <File Type="PA-TCL" Name="floating_point_Addition.tcl"/>
-  <File Type="RDS-UTIL-PB" Name="floating_point_Addition_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="floating_point_Addition.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="floating_point_Addition_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="floating_point_Addition_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="floating_point_Addition_timing_summary_synth.rpt"/>
   <File Type="RDS-RDS" Name="floating_point_Addition.vds"/>
   <File Type="RDS-PROPCONSTRS" Name="floating_point_Addition_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="floating_point_Addition.tcl"/>
+  <File Type="RDS-UTIL" Name="floating_point_Addition_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="floating_point_Addition_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="floating_point_Addition.dcp"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/floating_point_Addition">
     <File Path="$PSRCDIR/sources_1/ip/floating_point_Addition/floating_point_Addition.xci">
       <FileInfo>

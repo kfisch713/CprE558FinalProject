@@ -2,11 +2,11 @@
 # Webtalk v2017.1 (64-bit)
 # SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
 # IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
-# Start of session at: Sun Dec 10 17:09:56 2017
-# Process ID: 47567
-# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func
-# Command line: wbtcv -mode batch -source /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/xsim.dir/Top_Level_func_impl/webtalk/xsim_webtalk.tcl -notrace
-# Log file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/webtalk.log
-# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/webtalk.jou
+# Start of session at: Tue Dec 12 14:39:27 2017
+# Process ID: 55259
+# Current directory: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func
+# Command line: wbtcv -mode batch -source /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/xsim.dir/Top_Level_func_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/webtalk.log
+# Journal file: /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/webtalk.jou
 #-----------------------------------------------------------
-source /home/ericm/Documents/Classes/cpre583/final_project/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/xsim.dir/Top_Level_func_impl/webtalk/xsim_webtalk.tcl -notrace
+source /home/ericm/Documents/Classes/cpre583/final_project/InvertedPedulum/LQR_Hardware/LQR_Hardware.sim/sim_1/impl/func/xsim.dir/Top_Level_func_impl/webtalk/xsim_webtalk.tcl -notrace

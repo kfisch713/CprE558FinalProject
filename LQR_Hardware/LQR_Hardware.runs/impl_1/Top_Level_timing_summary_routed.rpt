@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.1 (lin64) Build 1846317 Fri Apr 14 18:54:47 MDT 2017
-| Date         : Sun Dec 10 19:05:45 2017
+| Date         : Wed Dec 13 16:30:53 2017
 | Host         : linux-6.ece.iastate.edu running 64-bit Red Hat Enterprise Linux Workstation release 6.9 (Santiago)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file Top_Level_timing_summary_routed.rpt -rpx Top_Level_timing_summary_routed.rpx
 | Design       : Top_Level
@@ -83,7 +83,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 11 ports with no output delay specified. (HIGH)
+ There are 12 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      1.564        0.000                      0                27820        0.039        0.000                      0                27820        4.020        0.000                       0                 11837  
+      2.346        0.000                      0                28128        0.018        0.000                      0                28128        4.020        0.000                       0                 11995  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ Clock  {0.000 5.000}      10.000          100.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-Clock               1.564        0.000                      0                27820        0.039        0.000                      0                27820        4.020        0.000                       0                 11837  
+Clock               2.346        0.000                      0                28128        0.018        0.000                      0                28128        4.020        0.000                       0                 11995  
 
 
 ------------------------------------------------------------------------------------------------
@@ -182,210 +182,27 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  Clock
   To Clock:  Clock
 
-Setup :            0  Failing Endpoints,  Worst Slack        1.564ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.039ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        2.346ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.018ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        4.020ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             1.564ns  (required time - arrival time)
-  Source:                 Pend_Encoder/count_raw_reg[3]/C
-                            (falling edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            HW_run_flag_reg/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            5.000ns  (Clock rise@10.000ns - Clock fall@5.000ns)
-  Data Path Delay:        3.399ns  (logic 1.884ns (55.433%)  route 1.515ns (44.567%))
-  Logic Levels:           6  (CARRY4=4 LUT2=1 LUT5=1)
-  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.963ns = ( 14.963 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.423ns = ( 10.423 - 5.000 ) 
-    Clock Pessimism Removal (CPR):    0.429ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock fall edge)      5.000     5.000 f  
-    L16                                               0.000     5.000 f  Clock (IN)
-                         net (fo=0)                   0.000     5.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     6.491 f  Clock_IBUF_inst/O
-                         net (fo=1, routed)           2.076     8.567    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     8.668 f  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.755    10.423    Pend_Encoder/Clock_IBUF_BUFG
-    SLICE_X43Y9          FDRE                                         r  Pend_Encoder/count_raw_reg[3]/C  (IS_INVERTED)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X43Y9          FDRE (Prop_fdre_C_Q)         0.459    10.882 r  Pend_Encoder/count_raw_reg[3]/Q
-                         net (fo=8, routed)           0.876    11.758    Pend_Encoder/PA_Count_Raw[3]
-    SLICE_X41Y13         LUT2 (Prop_lut2_I0_O)        0.124    11.882 r  Pend_Encoder/HW_run_flag_i_96/O
-                         net (fo=1, routed)           0.000    11.882    Pend_Encoder/HW_run_flag_i_96_n_0
-    SLICE_X41Y13         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.532    12.414 r  Pend_Encoder/HW_run_flag_reg_i_61/CO[3]
-                         net (fo=1, routed)           0.000    12.414    Pend_Encoder/HW_run_flag_reg_i_61_n_0
-    SLICE_X41Y14         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.528 r  Pend_Encoder/HW_run_flag_reg_i_33/CO[3]
-                         net (fo=1, routed)           0.000    12.528    Pend_Encoder/HW_run_flag_reg_i_33_n_0
-    SLICE_X41Y15         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.642 r  Pend_Encoder/HW_run_flag_reg_i_6/CO[3]
-                         net (fo=1, routed)           0.000    12.642    Pend_Encoder/HW_run_flag_reg_i_6_n_0
-    SLICE_X41Y16         CARRY4 (Prop_carry4_CI_CO[2])
-                                                      0.228    12.870 f  Pend_Encoder/HW_run_flag_reg_i_2/CO[2]
-                         net (fo=1, routed)           0.639    13.509    Pend_Encoder/HW_run_flag_reg_i_2_n_1
-    SLICE_X41Y17         LUT5 (Prop_lut5_I0_O)        0.313    13.822 r  Pend_Encoder/HW_run_flag_i_1/O
-                         net (fo=1, routed)           0.000    13.822    Pend_Encoder_n_0
-    SLICE_X41Y17         FDRE                                         r  HW_run_flag_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)     10.000    10.000 r  
-    L16                                               0.000    10.000 r  Clock (IN)
-                         net (fo=0)                   0.000    10.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.571    14.963    Clock_IBUF_BUFG
-    SLICE_X41Y17         FDRE                                         r  HW_run_flag_reg/C
-                         clock pessimism              0.429    15.392    
-                         clock uncertainty           -0.035    15.357    
-    SLICE_X41Y17         FDRE (Setup_fdre_C_D)        0.029    15.386    HW_run_flag_reg
-  -------------------------------------------------------------------
-                         required time                         15.386    
-                         arrival time                         -13.822    
-  -------------------------------------------------------------------
-                         slack                                  1.564    
-
-Slack (MET) :             2.473ns  (required time - arrival time)
+Slack (MET) :             2.346ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/CE
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[17]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        7.091ns  (logic 0.704ns (9.929%)  route 6.387ns (90.071%))
-  Logic Levels:           2  (LUT3=1 LUT5=1)
-  Clock Path Skew:        -0.232ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.898ns = ( 14.898 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
-    Clock Pessimism Removal (CPR):    0.291ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 r  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 f  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.383    11.231    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/opt_has_pipe.i_pipe[11].pipe_reg[11][0]
-    SLICE_X3Y2           LUT5 (Prop_lut5_I2_O)        0.124    11.355 r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=32, routed)          1.156    12.511    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_0
-    SLICE_X6Y11          FDRE                                         r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)     10.000    10.000 r  
-    L16                                               0.000    10.000 r  Clock (IN)
-                         net (fo=0)                   0.000    10.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.506    14.898    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X6Y11          FDRE                                         r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/C
-                         clock pessimism              0.291    15.189    
-                         clock uncertainty           -0.035    15.153    
-    SLICE_X6Y11          FDRE (Setup_fdre_C_CE)      -0.169    14.984    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]
-  -------------------------------------------------------------------
-                         required time                         14.984    
-                         arrival time                         -12.511    
-  -------------------------------------------------------------------
-                         slack                                  2.473    
-
-Slack (MET) :             2.473ns  (required time - arrival time)
-  Source:                 FSM/state_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/CE
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        7.091ns  (logic 0.704ns (9.929%)  route 6.387ns (90.071%))
-  Logic Levels:           2  (LUT3=1 LUT5=1)
-  Clock Path Skew:        -0.232ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.898ns = ( 14.898 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
-    Clock Pessimism Removal (CPR):    0.291ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 r  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 f  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.383    11.231    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/opt_has_pipe.i_pipe[11].pipe_reg[11][0]
-    SLICE_X3Y2           LUT5 (Prop_lut5_I2_O)        0.124    11.355 r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=32, routed)          1.156    12.511    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_0
-    SLICE_X6Y11          FDRE                                         r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)     10.000    10.000 r  
-    L16                                               0.000    10.000 r  Clock (IN)
-                         net (fo=0)                   0.000    10.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.506    14.898    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X6Y11          FDRE                                         r  LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/C
-                         clock pessimism              0.291    15.189    
-                         clock uncertainty           -0.035    15.153    
-    SLICE_X6Y11          FDRE (Setup_fdre_C_CE)      -0.169    14.984    LQR_Control/M33_Add_M34/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]
-  -------------------------------------------------------------------
-                         required time                         14.984    
-                         arrival time                         -12.511    
-  -------------------------------------------------------------------
-                         slack                                  2.473    
-
-Slack (MET) :             2.587ns  (required time - arrival time)
-  Source:                 FSM/state_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[2]/R
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.373ns  (logic 0.730ns (11.455%)  route 5.643ns (88.545%))
-  Logic Levels:           2  (LUT2=1 LUT3=1)
-  Clock Path Skew:        -0.272ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.871ns = ( 14.871 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.139ns  (logic 1.070ns (14.988%)  route 6.069ns (85.013%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -401,16 +218,16 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.249    11.097    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/ce_internal_core
-    SLICE_X17Y67         LUT2 (Prop_lut2_I1_O)        0.150    11.247 r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[7]_i_1/O
-                         net (fo=7, routed)           0.546    11.793    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/p_26_out__0
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[2]/R
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.909    12.563    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[17]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -419,30 +236,30 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.480    14.871    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/aclk
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[2]/C
-                         clock pessimism              0.277    15.148    
-                         clock uncertainty           -0.035    15.113    
-    SLICE_X16Y66         FDRE (Setup_fdre_C_R)       -0.732    14.381    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[2]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[17]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X7Y71          FDRE (Setup_fdre_C_CE)      -0.205    14.909    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[17]
   -------------------------------------------------------------------
-                         required time                         14.381    
-                         arrival time                         -11.793    
+                         required time                         14.909    
+                         arrival time                         -12.563    
   -------------------------------------------------------------------
-                         slack                                  2.587    
+                         slack                                  2.346    
 
-Slack (MET) :             2.587ns  (required time - arrival time)
+Slack (MET) :             2.346ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/R
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[19]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.373ns  (logic 0.730ns (11.455%)  route 5.643ns (88.545%))
-  Logic Levels:           2  (LUT2=1 LUT3=1)
-  Clock Path Skew:        -0.272ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.871ns = ( 14.871 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.139ns  (logic 1.070ns (14.988%)  route 6.069ns (85.013%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -458,16 +275,16 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.249    11.097    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/ce_internal_core
-    SLICE_X17Y67         LUT2 (Prop_lut2_I1_O)        0.150    11.247 r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[7]_i_1/O
-                         net (fo=7, routed)           0.546    11.793    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/p_26_out__0
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/R
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.909    12.563    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[19]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -476,30 +293,30 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.480    14.871    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/aclk
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]/C
-                         clock pessimism              0.277    15.148    
-                         clock uncertainty           -0.035    15.113    
-    SLICE_X16Y66         FDRE (Setup_fdre_C_R)       -0.732    14.381    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[3]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[19]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X7Y71          FDRE (Setup_fdre_C_CE)      -0.205    14.909    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[19]
   -------------------------------------------------------------------
-                         required time                         14.381    
-                         arrival time                         -11.793    
+                         required time                         14.909    
+                         arrival time                         -12.563    
   -------------------------------------------------------------------
-                         slack                                  2.587    
+                         slack                                  2.346    
 
-Slack (MET) :             2.587ns  (required time - arrival time)
+Slack (MET) :             2.346ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/R
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[20]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.373ns  (logic 0.730ns (11.455%)  route 5.643ns (88.545%))
-  Logic Levels:           2  (LUT2=1 LUT3=1)
-  Clock Path Skew:        -0.272ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.871ns = ( 14.871 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.139ns  (logic 1.070ns (14.988%)  route 6.069ns (85.013%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -515,16 +332,16 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.249    11.097    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/ce_internal_core
-    SLICE_X17Y67         LUT2 (Prop_lut2_I1_O)        0.150    11.247 r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/EXP/STATE_DEC_DELAY/i_pipe/RESULT_REG.NORMAL.exp_op[7]_i_1/O
-                         net (fo=7, routed)           0.546    11.793    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/p_26_out__0
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/R
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.909    12.563    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[20]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -533,30 +350,30 @@ Slack (MET) :             2.587ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.480    14.871    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/aclk
-    SLICE_X16Y66         FDRE                                         r  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
-                         clock pessimism              0.277    15.148    
-                         clock uncertainty           -0.035    15.113    
-    SLICE_X16Y66         FDRE (Setup_fdre_C_R)       -0.732    14.381    LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[20]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X7Y71          FDRE (Setup_fdre_C_CE)      -0.205    14.909    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[20]
   -------------------------------------------------------------------
-                         required time                         14.381    
-                         arrival time                         -11.793    
+                         required time                         14.909    
+                         arrival time                         -12.563    
   -------------------------------------------------------------------
-                         slack                                  2.587    
+                         slack                                  2.346    
 
-Slack (MET) :             2.589ns  (required time - arrival time)
+Slack (MET) :             2.346ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[17]/CE
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[22]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.944ns  (logic 0.704ns (10.138%)  route 6.240ns (89.862%))
-  Logic Levels:           2  (LUT3=1 LUT4=1)
-  Clock Path Skew:        -0.262ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.881ns = ( 14.881 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.139ns  (logic 1.070ns (14.988%)  route 6.069ns (85.013%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -572,16 +389,16 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.863    11.711    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
-    SLICE_X10Y88         LUT4 (Prop_lut4_I0_O)        0.124    11.835 r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=7, routed)           0.529    12.364    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_1
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[17]/CE
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.909    12.563    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[22]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -590,30 +407,30 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.490    14.881    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[17]/C
-                         clock pessimism              0.277    15.158    
-                         clock uncertainty           -0.035    15.123    
-    SLICE_X10Y87         FDRE (Setup_fdre_C_CE)      -0.169    14.954    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[17]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X7Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[22]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X7Y71          FDRE (Setup_fdre_C_CE)      -0.205    14.909    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[22]
   -------------------------------------------------------------------
-                         required time                         14.954    
-                         arrival time                         -12.364    
+                         required time                         14.909    
+                         arrival time                         -12.563    
   -------------------------------------------------------------------
-                         slack                                  2.589    
+                         slack                                  2.346    
 
-Slack (MET) :             2.589ns  (required time - arrival time)
+Slack (MET) :             2.391ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[20]/CE
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[0]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.944ns  (logic 0.704ns (10.138%)  route 6.240ns (89.862%))
-  Logic Levels:           2  (LUT3=1 LUT4=1)
-  Clock Path Skew:        -0.262ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.881ns = ( 14.881 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.130ns  (logic 1.070ns (15.006%)  route 6.060ns (84.994%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -629,16 +446,16 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.863    11.711    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
-    SLICE_X10Y88         LUT4 (Prop_lut4_I0_O)        0.124    11.835 r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=7, routed)           0.529    12.364    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_1
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[20]/CE
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.900    12.554    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -647,30 +464,30 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.490    14.881    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[20]/C
-                         clock pessimism              0.277    15.158    
-                         clock uncertainty           -0.035    15.123    
-    SLICE_X10Y87         FDRE (Setup_fdre_C_CE)      -0.169    14.954    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[20]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[0]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X6Y71          FDRE (Setup_fdre_C_CE)      -0.169    14.945    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[0]
   -------------------------------------------------------------------
-                         required time                         14.954    
-                         arrival time                         -12.364    
+                         required time                         14.945    
+                         arrival time                         -12.554    
   -------------------------------------------------------------------
-                         slack                                  2.589    
+                         slack                                  2.391    
 
-Slack (MET) :             2.589ns  (required time - arrival time)
+Slack (MET) :             2.391ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/CE
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[31]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.944ns  (logic 0.704ns (10.138%)  route 6.240ns (89.862%))
-  Logic Levels:           2  (LUT3=1 LUT4=1)
-  Clock Path Skew:        -0.262ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.881ns = ( 14.881 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.130ns  (logic 1.070ns (15.006%)  route 6.060ns (84.994%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -686,16 +503,16 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.863    11.711    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
-    SLICE_X10Y88         LUT4 (Prop_lut4_I0_O)        0.124    11.835 r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=7, routed)           0.529    12.364    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_1
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/CE
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.900    12.554    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[31]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -704,30 +521,30 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.490    14.881    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]/C
-                         clock pessimism              0.277    15.158    
-                         clock uncertainty           -0.035    15.123    
-    SLICE_X10Y87         FDRE (Setup_fdre_C_CE)      -0.169    14.954    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[21]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[31]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X6Y71          FDRE (Setup_fdre_C_CE)      -0.169    14.945    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[31]
   -------------------------------------------------------------------
-                         required time                         14.954    
-                         arrival time                         -12.364    
+                         required time                         14.945    
+                         arrival time                         -12.554    
   -------------------------------------------------------------------
-                         slack                                  2.589    
+                         slack                                  2.391    
 
-Slack (MET) :             2.589ns  (required time - arrival time)
+Slack (MET) :             2.391ns  (required time - arrival time)
   Source:                 FSM/state_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/CE
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[5]/CE
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
-  Data Path Delay:        6.944ns  (logic 0.704ns (10.138%)  route 6.240ns (89.862%))
-  Logic Levels:           2  (LUT3=1 LUT4=1)
-  Clock Path Skew:        -0.262ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.881ns = ( 14.881 - 10.000 ) 
-    Source Clock Delay      (SCD):    5.420ns
+  Data Path Delay:        7.130ns  (logic 1.070ns (15.006%)  route 6.060ns (84.994%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
     Clock Pessimism Removal (CPR):    0.277ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -743,16 +560,16 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.752     5.420    FSM/Clock_IBUF_BUFG
-    SLICE_X40Y35         FDRE                                         r  FSM/state_reg[2]/C
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X40Y35         FDRE (Prop_fdre_C_Q)         0.456     5.876 f  FSM/state_reg[2]/Q
-                         net (fo=9, routed)           0.848     6.724    FSM/Q[2]
-    SLICE_X42Y36         LUT3 (Prop_lut3_I0_O)        0.124     6.848 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
-                         net (fo=9162, routed)        4.863    11.711    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
-    SLICE_X10Y88         LUT4 (Prop_lut4_I0_O)        0.124    11.835 r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata[31]_i_1/O
-                         net (fo=7, routed)           0.529    12.364    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg1_b_tdata_1
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/CE
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.900    12.554    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[5]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)     10.000    10.000 r  
@@ -761,16 +578,187 @@ Slack (MET) :             2.589ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           1.880    13.301    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       1.490    14.881    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X10Y87         FDRE                                         r  LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]/C
-                         clock pessimism              0.277    15.158    
-                         clock uncertainty           -0.035    15.123    
-    SLICE_X10Y87         FDRE (Setup_fdre_C_CE)      -0.169    14.954    LQR_Control/K1_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[22]
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[5]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X6Y71          FDRE (Setup_fdre_C_CE)      -0.169    14.945    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[5]
   -------------------------------------------------------------------
-                         required time                         14.954    
-                         arrival time                         -12.364    
+                         required time                         14.945    
+                         arrival time                         -12.554    
   -------------------------------------------------------------------
-                         slack                                  2.589    
+                         slack                                  2.391    
+
+Slack (MET) :             2.391ns  (required time - arrival time)
+  Source:                 FSM/state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[7]/CE
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
+  Data Path Delay:        7.130ns  (logic 1.070ns (15.006%)  route 6.060ns (84.994%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.900    12.554    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)     10.000    10.000 r  
+    L16                                               0.000    10.000 r  Clock (IN)
+                         net (fo=0)                   0.000    10.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[7]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X6Y71          FDRE (Setup_fdre_C_CE)      -0.169    14.945    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[7]
+  -------------------------------------------------------------------
+                         required time                         14.945    
+                         arrival time                         -12.554    
+  -------------------------------------------------------------------
+                         slack                                  2.391    
+
+Slack (MET) :             2.391ns  (required time - arrival time)
+  Source:                 FSM/state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/CE
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
+  Data Path Delay:        7.130ns  (logic 1.070ns (15.006%)  route 6.060ns (84.994%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.274ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.872ns = ( 14.872 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.900    12.554    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)     10.000    10.000 r  
+    L16                                               0.000    10.000 r  Clock (IN)
+                         net (fo=0)                   0.000    10.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.481    14.872    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X6Y71          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/C
+                         clock pessimism              0.277    15.149    
+                         clock uncertainty           -0.035    15.114    
+    SLICE_X6Y71          FDRE (Setup_fdre_C_CE)      -0.169    14.945    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]
+  -------------------------------------------------------------------
+                         required time                         14.945    
+                         arrival time                         -12.554    
+  -------------------------------------------------------------------
+                         slack                                  2.391    
+
+Slack (MET) :             2.484ns  (required time - arrival time)
+  Source:                 FSM/state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[12]/CE
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (Clock rise@10.000ns - Clock rise@0.000ns)
+  Data Path Delay:        6.999ns  (logic 1.070ns (15.287%)  route 5.929ns (84.713%))
+  Logic Levels:           2  (LUT3=2)
+  Clock Path Skew:        -0.276ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.870ns = ( 14.870 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.423ns
+    Clock Pessimism Removal (CPR):    0.277ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.755     5.423    FSM/Clock_IBUF_BUFG
+    SLICE_X43Y39         FDRE                                         r  FSM/state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y39         FDRE (Prop_fdre_C_Q)         0.419     5.842 f  FSM/state_reg[2]/Q
+                         net (fo=10, routed)          0.882     6.724    FSM/Q[2]
+    SLICE_X43Y38         LUT3 (Prop_lut3_I2_O)        0.325     7.049 r  FSM/FP_Enable_Out_OBUF_inst_i_1/O
+                         net (fo=9204, routed)        4.278    11.327    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclken
+    SLICE_X5Y75          LUT3 (Prop_lut3_I0_O)        0.326    11.653 r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata[31]_i_1/O
+                         net (fo=13, routed)          0.769    12.423    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/reg2_b_tdata
+    SLICE_X7Y72          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)     10.000    10.000 r  
+    L16                                               0.000    10.000 r  Clock (IN)
+                         net (fo=0)                   0.000    10.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         1.421    11.421 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           1.880    13.301    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.392 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       1.479    14.870    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X7Y72          FDRE                                         r  LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[12]/C
+                         clock pessimism              0.277    15.147    
+                         clock uncertainty           -0.035    15.112    
+    SLICE_X7Y72          FDRE (Setup_fdre_C_CE)      -0.205    14.907    LQR_Control/K3_mult_uRef/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[12]
+  -------------------------------------------------------------------
+                         required time                         14.907    
+                         arrival time                         -12.423    
+  -------------------------------------------------------------------
+                         slack                                  2.484    
 
 
 
@@ -778,19 +766,254 @@ Slack (MET) :             2.589ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.039ns  (arrival time - required time)
-  Source:                 LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[13]/C
+Slack (MET) :             0.018ns  (arrival time - required time)
+  Source:                 LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[21]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[13]/D
+  Destination:            LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[10]/D
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.359ns  (logic 0.141ns (39.239%)  route 0.218ns (60.761%))
+  Data Path Delay:        0.287ns  (logic 0.128ns (44.664%)  route 0.159ns (55.336%))
   Logic Levels:           0  
-  Clock Path Skew:        0.274ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.990ns
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.979ns
+    Source Clock Delay      (SCD):    1.465ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.553     1.465    LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/aclk
+    SLICE_X23Y20         FDRE                                         r  LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[21]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X23Y20         FDRE (Prop_fdre_C_Q)         0.128     1.593 r  LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[21]/Q
+                         net (fo=1, routed)           0.159     1.751    LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/out[8]
+    SLICE_X20Y21         FDRE                                         r  LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.820     1.979    LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/aclk
+    SLICE_X20Y21         FDRE                                         r  LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[10]/C
+                         clock pessimism             -0.252     1.727    
+    SLICE_X20Y21         FDRE (Hold_fdre_C_D)         0.006     1.733    LQR_Control/T34_Mult_sd2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[10]
+  -------------------------------------------------------------------
+                         required time                         -1.733    
+                         arrival time                           1.751    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+Slack (MET) :             0.021ns  (arrival time - required time)
+  Source:                 LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.352ns  (logic 0.141ns (40.020%)  route 0.211ns (59.980%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.992ns
+    Source Clock Delay      (SCD):    1.475ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.563     1.475    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/aclk
+    SLICE_X23Y0          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X23Y0          FDRE (Prop_fdre_C_Q)         0.141     1.616 r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[15]/Q
+                         net (fo=1, routed)           0.211     1.827    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/out[2]
+    SLICE_X21Y1          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.833     1.992    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/aclk
+    SLICE_X21Y1          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[4]/C
+                         clock pessimism             -0.252     1.740    
+    SLICE_X21Y1          FDRE (Hold_fdre_C_D)         0.066     1.806    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/MANT_RND2_DEL/i_pipe/opt_has_pipe.first_q_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.806    
+                         arrival time                           1.827    
+  -------------------------------------------------------------------
+                         slack                                  0.021    
+
+Slack (MET) :             0.032ns  (arrival time - required time)
+  Source:                 LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.315ns  (logic 0.148ns (47.050%)  route 0.167ns (52.950%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.985ns
     Source Clock Delay      (SCD):    1.469ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.557     1.469    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/aclk
+    SLICE_X20Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X20Y50         FDRE (Prop_fdre_C_Q)         0.148     1.617 r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[6]/Q
+                         net (fo=1, routed)           0.167     1.783    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/first_q[6]
+    SLICE_X25Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.826     1.985    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/aclk
+    SLICE_X25Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]/C
+                         clock pessimism             -0.252     1.733    
+    SLICE_X25Y50         FDRE (Hold_fdre_C_D)         0.018     1.751    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][6]
+  -------------------------------------------------------------------
+                         required time                         -1.751    
+                         arrival time                           1.783    
+  -------------------------------------------------------------------
+                         slack                                  0.032    
+
+Slack (MET) :             0.035ns  (arrival time - required time)
+  Source:                 LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][11]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.352ns  (logic 0.141ns (40.037%)  route 0.211ns (59.963%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.265ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns
+    Source Clock Delay      (SCD):    1.474ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.562     1.474    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
+    SLICE_X22Y5          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X22Y5          FDRE (Prop_fdre_C_Q)         0.141     1.615 r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[11]/Q
+                         net (fo=1, routed)           0.211     1.826    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/first_q[11]
+    SLICE_X20Y6          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.832     1.991    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
+    SLICE_X20Y6          FDRE                                         r  LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][11]/C
+                         clock pessimism             -0.252     1.739    
+    SLICE_X20Y6          FDRE (Hold_fdre_C_D)         0.052     1.791    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][11]
+  -------------------------------------------------------------------
+                         required time                         -1.791    
+                         arrival time                           1.826    
+  -------------------------------------------------------------------
+                         slack                                  0.035    
+
+Slack (MET) :             0.037ns  (arrival time - required time)
+  Source:                 LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.312ns  (logic 0.128ns (41.074%)  route 0.184ns (58.926%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.261ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.980ns
+    Source Clock Delay      (SCD):    1.467ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.555     1.467    LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X19Y63         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X19Y63         FDRE (Prop_fdre_C_Q)         0.128     1.595 r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[9]/Q
+                         net (fo=4, routed)           0.184     1.778    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/gen_has_z_tready.reg2_b_tdata_reg[22][9]
+    SLICE_X23Y62         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.821     1.980    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/aclk
+    SLICE_X23Y62         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]/C
+                         clock pessimism             -0.252     1.728    
+    SLICE_X23Y62         FDRE (Hold_fdre_C_D)         0.013     1.741    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -1.741    
+                         arrival time                           1.778    
+  -------------------------------------------------------------------
+                         slack                                  0.037    
+
+Slack (MET) :             0.038ns  (arrival time - required time)
+  Source:                 LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[28]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.392ns  (logic 0.226ns (57.613%)  route 0.166ns (42.387%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.988ns
+    Source Clock Delay      (SCD):    1.478ns
     Clock Pessimism Removal (CPR):    0.247ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -801,12 +1024,14 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.557     1.469    LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/aclk
-    SLICE_X25Y50         FDRE                                         r  LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[13]/C
+                         net (fo=11994, routed)       0.566     1.478    LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X14Y49         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[28]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X25Y50         FDRE (Prop_fdre_C_Q)         0.141     1.610 r  LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[13]/Q
-                         net (fo=2, routed)           0.218     1.828    LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/s_axis_a_tdata[13]
-    SLICE_X23Y47         FDRE                                         r  LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[13]/D
+    SLICE_X14Y49         FDRE (Prop_fdre_C_Q)         0.128     1.606 f  LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[28]/Q
+                         net (fo=6, routed)           0.166     1.772    LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/Q[28]
+    SLICE_X15Y51         LUT5 (Prop_lut5_I0_O)        0.098     1.870 r  LQR_Control/M31_Add_M32/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/opt_has_pipe.first_q[0]_i_1__10/O
+                         net (fo=1, routed)           0.000     1.870    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/exp_all_zero_ip
+    SLICE_X15Y51         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)      0.000     0.000 r  
@@ -815,30 +1040,77 @@ Slack (MET) :             0.039ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.831     1.990    LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X23Y47         FDRE                                         r  LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[13]/C
-                         clock pessimism             -0.247     1.743    
-    SLICE_X23Y47         FDRE (Hold_fdre_C_D)         0.046     1.789    LQR_Control/A21_Add_A22/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[13]
+                         net (fo=11994, routed)       0.829     1.988    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/aclk
+    SLICE_X15Y51         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/opt_has_pipe.first_q_reg[0]/C
+                         clock pessimism             -0.247     1.741    
+    SLICE_X15Y51         FDRE (Hold_fdre_C_D)         0.091     1.832    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/COND_DET_A/EXP_DET_LUT.EXP_ALL_ZERO_DEL/i_pipe/opt_has_pipe.first_q_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.789    
-                         arrival time                           1.828    
+                         required time                         -1.832    
+                         arrival time                           1.870    
+  -------------------------------------------------------------------
+                         slack                                  0.038    
+
+Slack (MET) :             0.039ns  (arrival time - required time)
+  Source:                 LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             Clock
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
+  Data Path Delay:        0.364ns  (logic 0.141ns (38.723%)  route 0.223ns (61.277%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.262ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.975ns
+    Source Clock Delay      (SCD):    1.461ns
+    Clock Pessimism Removal (CPR):    0.252ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.549     1.461    LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/aclk
+    SLICE_X23Y68         FDRE                                         r  LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X23Y68         FDRE (Prop_fdre_C_Q)         0.141     1.602 r  LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/Q
+                         net (fo=2, routed)           0.223     1.825    LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/s_axis_a_tdata[28]
+    SLICE_X20Y70         FDRE                                         r  LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock Clock rise edge)      0.000     0.000 r  
+    L16                                               0.000     0.000 r  Clock (IN)
+                         net (fo=0)                   0.000     0.000    Clock
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
+                         net (fo=11994, routed)       0.816     1.975    LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
+    SLICE_X20Y70         FDRE                                         r  LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[28]/C
+                         clock pessimism             -0.252     1.723    
+    SLICE_X20Y70         FDRE (Hold_fdre_C_D)         0.063     1.786    LQR_Control/A33_Add_K3/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_a_tdata_reg[28]
+  -------------------------------------------------------------------
+                         required time                         -1.786    
+                         arrival time                           1.825    
   -------------------------------------------------------------------
                          slack                                  0.039    
 
 Slack (MET) :             0.040ns  (arrival time - required time)
-  Source:                 LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[10]/C
+  Source:                 LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/IP_SIGN_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][0]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/x1_reg[10]/D
+  Destination:            LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.377ns  (logic 0.141ns (37.421%)  route 0.236ns (62.579%))
+  Data Path Delay:        0.333ns  (logic 0.148ns (44.465%)  route 0.185ns (55.535%))
   Logic Levels:           0  
-  Clock Path Skew:        0.266ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.983ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.252ns
+  Clock Path Skew:        0.276ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.015ns
+    Source Clock Delay      (SCD):    1.492ns
+    Clock Pessimism Removal (CPR):    0.247ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -848,12 +1120,12 @@ Slack (MET) :             0.040ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.553     1.465    LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/aclk
-    SLICE_X23Y62         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[10]/C
+                         net (fo=11994, routed)       0.580     1.492    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/IP_SIGN_DELAY/i_pipe/aclk
+    SLICE_X0Y50          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/IP_SIGN_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y62         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/OP/RESULT_REG.NORMAL.mant_op_reg[10]/Q
-                         net (fo=1, routed)           0.236     1.842    LQR_Control/x1_Next[10]
-    SLICE_X15Y62         FDRE                                         r  LQR_Control/x1_reg[10]/D
+    SLICE_X0Y50          FDRE (Prop_fdre_C_Q)         0.148     1.640 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/IP_SIGN_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][0]/Q
+                         net (fo=1, routed)           0.185     1.825    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][0]
+    SLICE_X2Y49          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)      0.000     0.000 r  
@@ -862,271 +1134,28 @@ Slack (MET) :             0.040ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.824     1.983    LQR_Control/Clock_IBUF_BUFG
-    SLICE_X15Y62         FDRE                                         r  LQR_Control/x1_reg[10]/C
-                         clock pessimism             -0.252     1.731    
-    SLICE_X15Y62         FDRE (Hold_fdre_C_D)         0.070     1.801    LQR_Control/x1_reg[10]
+                         net (fo=11994, routed)       0.856     2.015    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/aclk
+    SLICE_X2Y49          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/C
+                         clock pessimism             -0.247     1.768    
+    SLICE_X2Y49          FDRE (Hold_fdre_C_D)         0.017     1.785    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/EXP/SIGN_UP_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.801    
-                         arrival time                           1.842    
+                         required time                         -1.785    
+                         arrival time                           1.825    
   -------------------------------------------------------------------
                          slack                                  0.040    
 
-Slack (MET) :             0.042ns  (arrival time - required time)
-  Source:                 LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[10]/C
+Slack (MET) :             0.040ns  (arrival time - required time)
+  Source:                 LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]/D
+  Destination:            LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.373ns  (logic 0.141ns (37.839%)  route 0.232ns (62.161%))
+  Data Path Delay:        0.379ns  (logic 0.164ns (43.240%)  route 0.215ns (56.760%))
   Logic Levels:           0  
   Clock Path Skew:        0.264ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.016ns
-    Source Clock Delay      (SCD):    1.505ns
-    Clock Pessimism Removal (CPR):    0.247ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.593     1.505    LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X39Y47         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[10]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X39Y47         FDRE (Prop_fdre_C_Q)         0.141     1.646 r  LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_b_tdata_reg[10]/Q
-                         net (fo=4, routed)           0.232     1.877    LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/gen_has_z_tready.reg2_b_tdata_reg[22][10]
-    SLICE_X36Y50         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.857     2.016    LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/aclk
-    SLICE_X36Y50         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]/C
-                         clock pessimism             -0.247     1.769    
-    SLICE_X36Y50         FDRE (Hold_fdre_C_D)         0.066     1.835    LQR_Control/A23_Add_K2/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/B_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[10]
-  -------------------------------------------------------------------
-                         required time                         -1.835    
-                         arrival time                           1.877    
-  -------------------------------------------------------------------
-                         slack                                  0.042    
-
-Slack (MET) :             0.043ns  (arrival time - required time)
-  Source:                 LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.440ns  (logic 0.348ns (79.109%)  route 0.092ns (20.891%))
-  Logic Levels:           3  (CARRY4=2 LUT3=1)
-  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.991ns
-    Source Clock Delay      (SCD):    1.481ns
-    Clock Pessimism Removal (CPR):    0.247ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.569     1.481    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/aclk
-    SLICE_X9Y49          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y49          FDRE (Prop_fdre_C_Q)         0.141     1.622 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/Q
-                         net (fo=2, routed)           0.091     1.713    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/first_q[5]
-    SLICE_X8Y49          LUT3 (Prop_lut3_I2_O)        0.045     1.758 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/CHAIN_GEN[4].C_MUX.CARRY_MUX_i_1/O
-                         net (fo=1, routed)           0.000     1.758    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/mant_shifted_rnd1[4]
-    SLICE_X8Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
-                                                      0.109     1.867 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/CHAIN_GEN[1].C_MUX.CARRY_MUX_CARRY4/CO[3]
-                         net (fo=1, routed)           0.001     1.868    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/carry_5
-    SLICE_X8Y50          CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.053     1.921 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/CHAIN_GEN[5].C_MUX.CARRY_MUX_CARRY4/O[0]
-                         net (fo=1, routed)           0.000     1.921    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/D[5]
-    SLICE_X8Y50          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.832     1.991    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
-    SLICE_X8Y50          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[5]/C
-                         clock pessimism             -0.247     1.744    
-    SLICE_X8Y50          FDRE (Hold_fdre_C_D)         0.134     1.878    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[5]
-  -------------------------------------------------------------------
-                         required time                         -1.878    
-                         arrival time                           1.921    
-  -------------------------------------------------------------------
-                         slack                                  0.043    
-
-Slack (MET) :             0.043ns  (arrival time - required time)
-  Source:                 LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.370ns  (logic 0.141ns (38.086%)  route 0.229ns (61.914%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.261ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.978ns
-    Source Clock Delay      (SCD):    1.465ns
-    Clock Pessimism Removal (CPR):    0.252ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.553     1.465    LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X19Y67         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X19Y67         FDRE (Prop_fdre_C_Q)         0.141     1.606 r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[2]/Q
-                         net (fo=4, routed)           0.229     1.835    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/gen_has_z_tready.reg2_a_tdata_reg[22][2]
-    SLICE_X22Y65         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.819     1.978    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/aclk
-    SLICE_X22Y65         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]/C
-                         clock pessimism             -0.252     1.726    
-    SLICE_X22Y65         FDRE (Hold_fdre_C_D)         0.066     1.792    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.792    
-                         arrival time                           1.835    
-  -------------------------------------------------------------------
-                         slack                                  0.043    
-
-Slack (MET) :             0.044ns  (arrival time - required time)
-  Source:                 LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[5]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.316ns  (logic 0.128ns (40.525%)  route 0.188ns (59.475%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.259ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.977ns
-    Source Clock Delay      (SCD):    1.466ns
-    Clock Pessimism Removal (CPR):    0.252ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.554     1.466    LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X19Y66         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[5]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X19Y66         FDRE (Prop_fdre_C_Q)         0.128     1.594 r  LQR_Control/M11_Add_M12/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg2_a_tdata_reg[5]/Q
-                         net (fo=4, routed)           0.188     1.782    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/gen_has_z_tready.reg2_a_tdata_reg[22][5]
-    SLICE_X23Y66         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.818     1.977    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/aclk
-    SLICE_X23Y66         FDRE                                         r  LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C
-                         clock pessimism             -0.252     1.725    
-    SLICE_X23Y66         FDRE (Hold_fdre_C_D)         0.013     1.738    LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/A_IP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]
-  -------------------------------------------------------------------
-                         required time                         -1.738    
-                         arrival time                           1.782    
-  -------------------------------------------------------------------
-                         slack                                  0.044    
-
-Slack (MET) :             0.045ns  (arrival time - required time)
-  Source:                 LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.394ns  (logic 0.141ns (35.768%)  route 0.253ns (64.232%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.274ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.015ns
-    Source Clock Delay      (SCD):    1.494ns
-    Clock Pessimism Removal (CPR):    0.247ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.582     1.494    LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
-    SLICE_X3Y51          FDRE                                         r  LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X3Y51          FDRE (Prop_fdre_C_Q)         0.141     1.635 r  LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/Q
-                         net (fo=1, routed)           0.253     1.888    LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/first_q[2]
-    SLICE_X3Y47          FDRE                                         r  LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.856     2.015    LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
-    SLICE_X3Y47          FDRE                                         r  LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]/C
-                         clock pessimism             -0.247     1.768    
-    SLICE_X3Y47          FDRE (Hold_fdre_C_D)         0.075     1.843    LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][2]
-  -------------------------------------------------------------------
-                         required time                         -1.843    
-                         arrival time                           1.888    
-  -------------------------------------------------------------------
-                         slack                                  0.045    
-
-Slack (MET) :             0.046ns  (arrival time - required time)
-  Source:                 LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND2/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.mant_op_reg[14]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.380ns  (logic 0.141ns (37.154%)  route 0.239ns (62.846%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.984ns
+    Destination Clock Delay (DCD):    1.985ns
     Source Clock Delay      (SCD):    1.469ns
     Clock Pessimism Removal (CPR):    0.252ns
 
@@ -1138,12 +1167,12 @@ Slack (MET) :             0.046ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.557     1.469    LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND2/Q_DEL/i_pipe/aclk
-    SLICE_X21Y52         FDRE                                         r  LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND2/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/C
+                         net (fo=11994, routed)       0.557     1.469    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/aclk
+    SLICE_X20Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X21Y52         FDRE (Prop_fdre_C_Q)         0.141     1.610 r  LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND2/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[2]/Q
-                         net (fo=1, routed)           0.239     1.848    LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/mant_op[14]
-    SLICE_X23Y56         FDRE                                         r  LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.mant_op_reg[14]/D
+    SLICE_X20Y50         FDRE (Prop_fdre_C_Q)         0.164     1.633 r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/Q
+                         net (fo=1, routed)           0.215     1.848    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/first_q[5]
+    SLICE_X25Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)      0.000     0.000 r  
@@ -1152,82 +1181,30 @@ Slack (MET) :             0.046ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.825     1.984    LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/aclk
-    SLICE_X23Y56         FDRE                                         r  LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.mant_op_reg[14]/C
-                         clock pessimism             -0.252     1.732    
-    SLICE_X23Y56         FDRE (Hold_fdre_C_D)         0.070     1.802    LQR_Control/T12_Mult_x2/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.mant_op_reg[14]
+                         net (fo=11994, routed)       0.826     1.985    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/aclk
+    SLICE_X25Y50         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]/C
+                         clock pessimism             -0.252     1.733    
+    SLICE_X25Y50         FDRE (Hold_fdre_C_D)         0.075     1.808    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][5]
   -------------------------------------------------------------------
-                         required time                         -1.802    
+                         required time                         -1.808    
                          arrival time                           1.848    
   -------------------------------------------------------------------
-                         slack                                  0.046    
+                         slack                                  0.040    
 
-Slack (MET) :             0.047ns  (arrival time - required time)
-  Source:                 LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[9]/C
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[8]/D
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Path Group:             Clock
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.444ns  (logic 0.290ns (65.318%)  route 0.154ns (34.682%))
-  Logic Levels:           2  (CARRY4=1 LUT3=1)
-  Clock Path Skew:        0.263ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.991ns
-    Source Clock Delay      (SCD):    1.481ns
-    Clock Pessimism Removal (CPR):    0.247ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.569     1.481    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/aclk
-    SLICE_X9Y49          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[9]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y49          FDRE (Prop_fdre_C_Q)         0.128     1.609 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/opt_has_pipe.first_q_reg[9]/Q
-                         net (fo=2, routed)           0.154     1.763    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/first_q[9]
-    SLICE_X8Y50          LUT3 (Prop_lut3_I2_O)        0.098     1.861 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/OP_REG.MANT_DEL/i_pipe/CHAIN_GEN[8].C_MUX.CARRY_MUX_i_1/O
-                         net (fo=1, routed)           0.000     1.861    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/mant_shifted_rnd1[8]
-    SLICE_X8Y50          CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.064     1.925 r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/CHAIN_GEN[5].C_MUX.CARRY_MUX_CARRY4/O[3]
-                         net (fo=1, routed)           0.000     1.925    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/D[8]
-    SLICE_X8Y50          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[8]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock Clock rise edge)      0.000     0.000 r  
-    L16                                               0.000     0.000 r  Clock (IN)
-                         net (fo=0)                   0.000     0.000    Clock
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    Clock_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.832     1.991    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/aclk
-    SLICE_X8Y50          FDRE                                         r  LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[8]/C
-                         clock pessimism             -0.247     1.744    
-    SLICE_X8Y50          FDRE (Hold_fdre_C_D)         0.134     1.878    LQR_Control/T22_Mult_x2/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/LOGIC.RND1/Q_DEL/i_pipe/opt_has_pipe.first_q_reg[8]
-  -------------------------------------------------------------------
-                         required time                         -1.878    
-                         arrival time                           1.925    
-  -------------------------------------------------------------------
-                         slack                                  0.047    
-
-Slack (MET) :             0.048ns  (arrival time - required time)
-  Source:                 LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
-                            (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
-  Destination:            LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[28]/D
+  Destination:            LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/D
                             (rising edge-triggered cell FDRE clocked by Clock  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             Clock
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (Clock rise@0.000ns - Clock rise@0.000ns)
-  Data Path Delay:        0.371ns  (logic 0.164ns (44.153%)  route 0.207ns (55.847%))
+  Data Path Delay:        0.381ns  (logic 0.164ns (43.013%)  route 0.217ns (56.987%))
   Logic Levels:           0  
   Clock Path Skew:        0.264ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.477ns
-    Clock Pessimism Removal (CPR):    0.247ns
+    Destination Clock Delay (DCD):    1.984ns
+    Source Clock Delay      (SCD):    1.468ns
+    Clock Pessimism Removal (CPR):    0.252ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1237,12 +1214,12 @@ Slack (MET) :             0.048ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.565     1.477    LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/OP/aclk
-    SLICE_X28Y45         FDRE                                         r  LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/C
+                         net (fo=11994, routed)       0.556     1.468    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/aclk
+    SLICE_X20Y55         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y45         FDRE (Prop_fdre_C_Q)         0.164     1.641 r  LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/OP/RESULT_REG.NORMAL.exp_op_reg[5]/Q
-                         net (fo=3, routed)           0.207     1.848    LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/s_axis_b_tdata[28]
-    SLICE_X28Y50         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[28]/D
+    SLICE_X20Y55         FDRE (Prop_fdre_C_Q)         0.164     1.632 r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg[0]/Q
+                         net (fo=1, routed)           0.217     1.849    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.first_q_reg_n_0_[0]
+    SLICE_X25Y55         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock Clock rise edge)      0.000     0.000 r  
@@ -1251,15 +1228,15 @@ Slack (MET) :             0.048ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  Clock_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    Clock_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  Clock_IBUF_BUFG_inst/O
-                         net (fo=11836, routed)       0.829     1.988    LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/aclk
-    SLICE_X28Y50         FDRE                                         r  LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[28]/C
-                         clock pessimism             -0.247     1.741    
-    SLICE_X28Y50         FDRE (Hold_fdre_C_D)         0.059     1.800    LQR_Control/A23_Add_K2/U0/i_synth/need_combiner.use_2to1.skid_buffer_combiner/gen_has_z_tready.reg1_b_tdata_reg[28]
+                         net (fo=11994, routed)       0.825     1.984    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/aclk
+    SLICE_X25Y55         FDRE                                         r  LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]/C
+                         clock pessimism             -0.252     1.732    
+    SLICE_X25Y55         FDRE (Hold_fdre_C_D)         0.075     1.807    LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/VALID_LRG_DELAY/i_pipe/opt_has_pipe.i_pipe[2].pipe_reg[2][0]
   -------------------------------------------------------------------
-                         required time                         -1.800    
-                         arrival time                           1.848    
+                         required time                         -1.807    
+                         arrival time                           1.849    
   -------------------------------------------------------------------
-                         slack                                  0.048    
+                         slack                                  0.042    
 
 
 
@@ -1273,36 +1250,36 @@ Period(ns):         10.000
 Sources:            { Clock }
 
 Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y16   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y27   LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y17   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[1].use_dsp.use_dsp48e1.iDSP48E1/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y18   LQR_Control/A21_Add_A22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y10   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y1    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y23   LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y14   LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y4    LQR_Control/PA_FP_to_Rad/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
-Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y36   LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X38Y83  LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/DET_SIGN_DELAY/i_pipe/opt_has_pipe.i_pipe[7].pipe_reg[7][0]_srl6/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X38Y83  LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/STATE_DELAY/i_pipe/opt_has_pipe.i_pipe[7].pipe_reg[7][0]_srl6/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X38Y83  LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/STATE_DELAY/i_pipe/opt_has_pipe.i_pipe[7].pipe_reg[7][1]_srl6/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][0]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][1]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][2]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][3]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][4]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][5]_srl3/CLK
-Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X4Y28   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.EXP/EXP_OFF.LRG_EXP_DELAY/i_pipe/opt_has_pipe.i_pipe[4].pipe_reg[4][6]_srl3/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X12Y79  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X12Y80  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X12Y80  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[3]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y65  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y65  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y65  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
-High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y65  LQR_Control/T11_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[3]_srl5/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y49   LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y49   LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
-High Pulse Width  Fast    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y49   LQR_Control/T31_Mult_x1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y8    LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y7    LQR_Control/A21_Add_A22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y24   LQR_Control/A31_Add_A32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y0    LQR_Control/CP_FP_to_m/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y25   LQR_Control/M11_Add_M12/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y13   LQR_Control/M21_Add_M22/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y22   LQR_Control/M31_Add_M32/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y2    LQR_Control/PA_FP_to_Rad/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[0].use_dsp.use_dsp48e1.iDSP48E1/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X1Y38   LQR_Control/Volt_FP_to_Bias/U0/i_synth/ADDSUB_OP.ADDSUB/SPEED_OP.DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/DSP/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            2.545         10.000      7.455      DSP48_X0Y9    LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/MULT/MULT_GEN_VARIANT.FIX_MULT/MULT/gDSP.gDSP_only.iDSP/use_prim.appDSP48[0].bppDSP48[1].use_dsp.use_dsp48e1.iDSP48E1/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y21   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/EXP/IP_SIGN_DELAY/i_pipe/opt_has_pipe.i_pipe[3].pipe_reg[3][0]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y21   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/EXP/SIG_DELAY/i_pipe/opt_has_pipe.i_pipe[3].pipe_reg[3][1]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y21   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/EXP/SIG_DELAY/i_pipe/opt_has_pipe.i_pipe[3].pipe_reg[3][3]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y21   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/EXP/STATE_DELAY/i_pipe/opt_has_pipe.i_pipe[3].pipe_reg[3][1]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[3]_srl5/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[4]_srl5/CLK
+Low Pulse Width   Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X0Y27   LQR_Control/K2_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[5]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y86  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y86  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y86  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X16Y86  LQR_Control/K1_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[3]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X10Y79  LQR_Control/K3_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X10Y79  LQR_Control/K3_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X10Y79  LQR_Control/K3_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[2]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X10Y79  LQR_Control/K3_mult_uRef/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[3]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X38Y24  LQR_Control/T13_Mult_sd1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[0]_srl5/CLK
+High Pulse Width  Slow    SRL16E/CLK   n/a            0.980         5.000       4.020      SLICE_X38Y24  LQR_Control/T13_Mult_sd1/U0/i_synth/MULT.OP/R_AND_R/LOGIC.R_AND_R/EXP_IN_DELAY.EXP_IN_DEL/i_pipe/opt_has_pipe.first_q_reg[1]_srl5/CLK
 
 
 

@@ -47,7 +47,7 @@ begin
 				prev_ch_b <= filtered_b;
 			end if;
 		end if;
-      if falling_edge(clk) then
+      if rising_edge(clk) then
         count_raw <= internal_count;
       end if;
 	end process;
